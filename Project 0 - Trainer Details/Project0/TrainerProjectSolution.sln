@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project0", "Project0\Project0.csproj", "{FD134365-C5F8-4FBA-A02D-4C7C6935A88D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI-Console", "Project0\UI-Console.csproj", "{FD134365-C5F8-4FBA-A02D-4C7C6935A88D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{E4EDCC87-5BC5-4553-B542-E19EEC0F701C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{0D3E6D6F-67D7-4282-A262-64FD8D5DD7CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{0D3E6D6F-67D7-4282-A262-64FD8D5DD7CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

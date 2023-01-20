@@ -88,7 +88,7 @@ namespace Data
                 Console.WriteLine("[1] Title - " + a.Title);
                 Console.WriteLine("[2] Description - " + a.Description);
                 Console.WriteLine("[3] Save");
-                Console.WriteLine("[0] bo back");
+                Console.WriteLine("[0] go back");
                 Console.WriteLine("Enter Your Choice");
                 int userchoice = Convert.ToInt32(Console.ReadLine());
 
