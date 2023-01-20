@@ -26,7 +26,7 @@ namespace Data
             e.Degree = Console.ReadLine();
             
         checkSDate:
-            Console.WriteLine("Enter your Start Date in (MM/YYYYY) format");
+            Console.WriteLine("Enter your Start Date in (MM/YYYY) format");
             e.StartDate = Console.ReadLine();
             if (e.StartDate.Equals("false"))
             {
@@ -34,7 +34,7 @@ namespace Data
                 goto checkSDate;
             }
         checkEDate:
-            Console.WriteLine("Enter your End Date in (MM/YYYYY) format or 'Present' if currenty Studying there");
+            Console.WriteLine("Enter your End Date in (MM/YYYY) format or 'Present' if currenty Studying there");
             e.EndDate = Console.ReadLine();
             if (e.EndDate.Equals("false"))
             {

@@ -25,7 +25,7 @@ namespace Data
             Console.WriteLine("Enter your Role");
             ex.Role = Console.ReadLine();
     checkSDate:
-            Console.WriteLine("Enter your Start Date in (MM/YYYYY) format");
+            Console.WriteLine("Enter your Start Date in (MM/YYYY) format");
             ex.StartDate = Console.ReadLine();
             if (ex.StartDate.Equals("false"))
             {
@@ -33,7 +33,7 @@ namespace Data
                 goto checkSDate;
             }
    checkEDate:
-            Console.WriteLine("Enter your End Date in (MM/YYYYY) format or 'Present' if currenty working there");
+            Console.WriteLine("Enter your End Date in (MM/YYYY) format or 'Present' if currenty working there");
             ex.EndDate = Console.ReadLine();
             if (ex.EndDate.Equals("false"))
             {
