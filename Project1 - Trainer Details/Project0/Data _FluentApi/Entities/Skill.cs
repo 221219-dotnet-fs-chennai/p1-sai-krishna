@@ -13,5 +13,9 @@ public partial class Skill
 
     public int SkillId { get; set; }
 
+    public override string ToString()
+    {
+        return $"-> {SkillName}{new string(' ', 25 - (SkillName.Length))}-{Description}\n";
+    }
     public virtual Trainer? Trainer { get; set; }
 }

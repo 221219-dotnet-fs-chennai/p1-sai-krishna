@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data;
+using Data__FluentApi;
 
 namespace UI_Console
 {
@@ -37,6 +38,8 @@ namespace UI_Console
                     Console.WriteLine("[3] Add, Modify or Delete Education Details");
                     Console.WriteLine("[4] Add, Modify or Delete Company Details/Experience");
                     Console.WriteLine("[5] Add, Modify or Delete Achivements");
+                    Console.WriteLine("[7] Get all triners skills using fluent api");
+                    Console.WriteLine("[8] Get all triners using fluent api");
                     Console.WriteLine("[6] View Your Profile");
                     Console.WriteLine("[0] Exit");
                     Console.WriteLine("Enter Your choice");
@@ -70,6 +73,22 @@ namespace UI_Console
                         case 6:
                             View(t);
                             Log.Information("Viewing Profile");
+                            break;
+                        case 7:
+                            var skills = FluentMethods.GetSkils(tid);
+                            foreach (var value in skills)
+                            {
+                                Console.WriteLine(value.ToString());
+                            }
+                            Console.ReadKey();
+                            break;
+                        case 8:
+                            var values = FluentMethods.GetTrainers();
+                            foreach(var value in values)
+                            {
+                                Console.WriteLine(value.ToString());
+                            }
+                            Console.ReadKey();
                             break;
                         default:
                             Console.WriteLine("Invalid Input");
