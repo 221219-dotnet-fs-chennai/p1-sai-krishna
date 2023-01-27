@@ -1,6 +1,6 @@
 ﻿global using Serilog;
 using Data;
-namespace Project0
+namespace UI_Console
 {
     class Program
     {

@@ -8,7 +8,7 @@ using Data;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
-namespace Project0
+namespace UI_Console
 {
     public class TrainerSignUp
     {

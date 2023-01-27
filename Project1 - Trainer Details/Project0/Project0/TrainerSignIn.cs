@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Data;
 
 
-namespace Project0
+namespace UI_Console
 {
     public class TrainerSignIn
     {
