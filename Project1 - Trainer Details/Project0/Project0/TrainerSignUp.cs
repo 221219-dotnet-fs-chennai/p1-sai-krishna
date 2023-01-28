@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using Data;
 using System.Numerics;
 using System.Text.RegularExpressions;
-
+using Models;
 namespace UI_Console
 {
     public class TrainerSignUp

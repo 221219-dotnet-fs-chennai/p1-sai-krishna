@@ -13,7 +13,7 @@ namespace Data__FluentApi
         public static List<Skill> GetSkils(int id)
         {
             Project0Context context = new Project0Context();
-            Skill sk=new Skill();
+           
             var skills = from s in context.Skills
                          where s.TrainerId==id
                          select s;

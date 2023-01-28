@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data;
+using Models;
 using Data__FluentApi;
 
 namespace UI_Console

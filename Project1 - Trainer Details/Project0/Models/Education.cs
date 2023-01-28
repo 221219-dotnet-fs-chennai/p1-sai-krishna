@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-namespace Data
+namespace Models
 {
     public class Education
     {
