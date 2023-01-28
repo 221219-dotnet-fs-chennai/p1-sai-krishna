@@ -16,6 +16,9 @@ namespace BusinessLogic
 
         public void addSkill(Skill s);
 
+        //public void updateSkill(Skill skill);
+        public void removeSkill(Skill s);
+
         public List<Skill> GetSkil(int id);
     }
 }

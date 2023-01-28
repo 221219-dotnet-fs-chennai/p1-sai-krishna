@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Models;
 using BusinessLogic;
+using System.Security.Cryptography;
 
 
 namespace Data
@@ -30,13 +31,6 @@ namespace Data
             s.Name=Console.ReadLine();
             Console.WriteLine("Enter Description about your Skill");
             s.Description = Console.ReadLine();
-            //con1.Open();
-            //string query = $"Insert into Skills (Trainer_id,Skill_name,Description) VALUES({id},'{s.Name}','{s.Description}')";
-            //SqlCommand command = new SqlCommand(query, con1);
-            //int n=command.ExecuteNonQuery();
-            //if(n==1)Console.WriteLine("Skill Added Click any key to continue");
-            //Console.ReadKey();
-            //con1.Close();
             s.Id= id;
             fr.addSkill(Mapper.SkillMapper(s));
 
@@ -48,19 +42,12 @@ namespace Data
             view(id);
             string skname;
             Console.WriteLine("Enter the Skill Name you want to Delete");
-            skname = Console.ReadLine();
-            con1.Open();
-            string query = $"Delete from Skills where Trainer_id={id} AND  Skill_name='{skname}'";
-            SqlCommand command=new SqlCommand(query, con1);
-            int n=command.ExecuteNonQuery();
-            if (n == 1)
-            {
-                Console.WriteLine($"Skill deleted Click any key to continue");
-            }
-            else
-            {
-                Console.WriteLine("Wrong Skill name");
-            }
+            s.Name = Console.ReadLine();
+            s.Id= id;
+            fr.removeSkill(Mapper.SkillMapper(s));
+
+           
+           
 
         }
 
@@ -135,22 +122,15 @@ namespace Data
 
         public void view(int id)
         {
-            Skill s = new Skill();
-            con1.Open();
-            string query = $"Select * from Skills where Trainer_id={id}";
-            SqlCommand command = new SqlCommand(query, con1);
-            SqlDataReader reader=command.ExecuteReader();
+            
             Console.WriteLine("============================Skills Present=======================\n");
-            while(reader.Read()) 
+            var skills = fr.GetSkil(id);
+            foreach (var value in skills)
             {
-                s.Name=reader.GetString(1);
-                s.Description=reader.GetString(2);
-                Console.WriteLine($"-> {s.Name}{new string(' ',25-(s.Name.Length))}-{s.Description}\n");
-
+                Console.WriteLine(value.ToString());
             }
-            con1.Close();
-            reader.Close();
-             
+            Console.ReadKey();
+
         }
     }
 }

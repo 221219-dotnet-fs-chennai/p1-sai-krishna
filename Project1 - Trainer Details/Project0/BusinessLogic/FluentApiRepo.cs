@@ -10,15 +10,20 @@ namespace BusinessLogic
 
         public void addSkill(Skill s)
         {
-            context.Add(s);
+            context.Skills.Add(s);
             context.SaveChanges();
             Console.WriteLine("skills added");
         }
 
         public void addTrainer(Trainer trainer)
         {
-            context.Trainers.Add(trainer);
+            throw new NotImplementedException();
         }
+
+        //public void addTrainer(Trainer trainer)
+        //{
+        //    context.Trainers.Add(trainer);
+        //}
 
         public List<Skill> GetSkil(int id)
         {
@@ -36,5 +41,27 @@ namespace BusinessLogic
             
             return context.Trainers.ToList();
         }
+
+        public void removeSkill(Skill sk)
+        {
+            
+            var skillToBeRemoved = context.Skills.Where(s => s.SkillName == sk.SkillName).FirstOrDefault();
+            context.Skills.Remove(skillToBeRemoved);
+            context.SaveChanges();
+            
+            Console.WriteLine("Skill Removed");
+
+        }
+
+        //public void updateSkill(Skill skill)
+        //{
+          
+        //    var presentSills = GetSkil(id);
+        //    var allSkills = from s in context.Skills
+        //                    where s.TrainerId == s.TrainerId 
+        //                    select s;
+            
+            
+        //}
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data;
 using Models;
-
+using Data__FluentApi;
 
 
 namespace UI_Console
@@ -15,6 +15,7 @@ namespace UI_Console
     {
         readonly string connectionString;
         Trainer t = new Trainer();
+
 
 
         public TrainerSignIn(string connectionString)
