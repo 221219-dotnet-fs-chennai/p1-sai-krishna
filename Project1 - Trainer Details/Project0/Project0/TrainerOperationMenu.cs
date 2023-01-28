@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Data;
 using Models;
 using Data__FluentApi;
+using BusinessLogic;
 
 namespace UI_Console
 {
@@ -15,6 +16,8 @@ namespace UI_Console
     {
         string username;
         Trainer t=new Trainer();
+        IFluentApiRepo fr=new FluentApiRepo();
+        
         
         int tid;
         bool accountDeleted=false;
@@ -76,7 +79,7 @@ namespace UI_Console
                             Log.Information("Viewing Profile");
                             break;
                         case 7:
-                            var skills = FluentMethods.GetSkils(tid);
+                            var skills = fr.GetSkil(tid);
                             foreach (var value in skills)
                             {
                                 Console.WriteLine(value.ToString());
@@ -84,7 +87,7 @@ namespace UI_Console
                             Console.ReadKey();
                             break;
                         case 8:
-                            var values = FluentMethods.GetTrainers();
+                            var values = fr.GetTrainers();
                             foreach(var value in values)
                             {
                                 Console.WriteLine(value.ToString());

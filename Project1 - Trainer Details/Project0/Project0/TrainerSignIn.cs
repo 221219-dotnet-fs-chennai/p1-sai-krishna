@@ -8,12 +8,14 @@ using Data;
 using Models;
 
 
+
 namespace UI_Console
 {
     public class TrainerSignIn
     {
         readonly string connectionString;
         Trainer t = new Trainer();
+
 
         public TrainerSignIn(string connectionString)
         {

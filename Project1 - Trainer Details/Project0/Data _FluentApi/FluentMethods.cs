@@ -1,5 +1,4 @@
 ﻿using Data__FluentApi.Entities;
-
 namespace Data__FluentApi
 {
     public  class FluentMethods

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using Models;
-
+using BusinessLogic;
 
 namespace Data
 {
@@ -14,6 +14,7 @@ namespace Data
     {
 
         string connectionString;
+        IFluentApiRepo fr = new FluentApiRepo();
         
 
         public trainerTable(string connectionString)
@@ -88,20 +89,23 @@ namespace Data
                         break;
                     case 6:
                         {
+
+                            //var trai=Mapper.TrainerMapper(trainer);
+                            //fr.addTrainer(trai);
                             using SqlConnection con1 = new SqlConnection(connectionString);
                             con1.Open();
 
                             string query = $"UPDATE Trainer SET Gender='{trainer.Gender}', City='{trainer.City}', State='{trainer.State}', Pincode='{trainer.Pincode}' ,About_me='{trainer.AboutMe}'WHERE Email='{trainer.Email}';";
 
                             SqlCommand command = new SqlCommand(query, con1);
-                            int n=command.ExecuteNonQuery();
+                            int n = command.ExecuteNonQuery();
                             if (n == 1)
                             {
-                                
+
                                 Console.WriteLine("Details Added Click any key to continue");
-                                 
+
                             }
-                                repeat = false;
+                            repeat = false;
                         }
                         break;
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Models;
-
+using BusinessLogic;
 
 
 namespace Data
@@ -15,6 +15,7 @@ namespace Data
         //using SqlConnection con=new SqlConnection(string connectionString);
         string connectionString;
         SqlConnection con1;
+        IFluentApiRepo fr=new FluentApiRepo();
         
         public skillTable(string connectionString)
         {
@@ -29,13 +30,15 @@ namespace Data
             s.Name=Console.ReadLine();
             Console.WriteLine("Enter Description about your Skill");
             s.Description = Console.ReadLine();
-            con1.Open();
-            string query = $"Insert into Skills (Trainer_id,Skill_name,Description) VALUES({id},'{s.Name}','{s.Description}')";
-            SqlCommand command = new SqlCommand(query, con1);
-            int n=command.ExecuteNonQuery();
-            if(n==1)Console.WriteLine("Skill Added Click any key to continue");
-            Console.ReadKey();
-            con1.Close();
+            //con1.Open();
+            //string query = $"Insert into Skills (Trainer_id,Skill_name,Description) VALUES({id},'{s.Name}','{s.Description}')";
+            //SqlCommand command = new SqlCommand(query, con1);
+            //int n=command.ExecuteNonQuery();
+            //if(n==1)Console.WriteLine("Skill Added Click any key to continue");
+            //Console.ReadKey();
+            //con1.Close();
+            s.Id= id;
+            fr.addSkill(Mapper.SkillMapper(s));
 
         }
 

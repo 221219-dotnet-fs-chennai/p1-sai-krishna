@@ -5,14 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Data__FluentApi.Entities;
 
-
-namespace Models
+namespace BusinessLogic
 {
     public interface IFluentApiRepo
     {
        
         public  List<Trainer> GetTrainers();
 
-        public List<Skill> GetSkils(int id);
+        public void addTrainer(Trainer trainer);
+
+        public void addSkill(Skill s);
+
+        public List<Skill> GetSkil(int id);
     }
 }
