@@ -14,7 +14,7 @@ namespace Data
     {
 
         string connectionString;
-        IFluentApiRepo fr = new FluentApiRepo();
+        ILogic fr = new logic();
         
 
         public trainerTable(string connectionString)
@@ -27,8 +27,6 @@ namespace Data
             
             Console.WriteLine("Enter Additional Trainer information");
             Console.WriteLine(" Email - " + trainer.Email);
-            //Console.WriteLine(" Phone - " + trainer.PhoneNo);
-            //Console.WriteLine(" Name - " + trainer.Name);
             Console.WriteLine("[1] Gender - " + trainer.Gender);
             Console.WriteLine("[2] City -" + trainer.City);
             Console.WriteLine("[3] State - " + trainer.State);

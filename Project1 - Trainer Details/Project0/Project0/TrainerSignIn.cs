@@ -4,9 +4,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLogic;
 using Data;
 using Models;
-using Data__FluentApi;
+using ef=Data__FluentApi;
 
 
 namespace UI_Console
@@ -15,7 +16,7 @@ namespace UI_Console
     {
         readonly string connectionString;
         Trainer t = new Trainer();
-
+        ILogic fr = new logic();
 
 
         public TrainerSignIn(string connectionString)
@@ -31,6 +32,10 @@ namespace UI_Console
         
             Console.WriteLine("Enter your Email Id");
             t.Email = Console.ReadLine();
+            if (fr.SignIn(t.Email))
+            {
+                Console.WriteLine("email exists");
+            }
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 

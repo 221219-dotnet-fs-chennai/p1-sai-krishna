@@ -16,7 +16,7 @@ namespace UI_Console
     {
         string username;
         Trainer t=new Trainer();
-        IFluentApiRepo fr=new FluentApiRepo();
+        ILogic bl=new logic();
         
         
         int tid;
@@ -79,15 +79,15 @@ namespace UI_Console
                             Log.Information("Viewing Profile");
                             break;
                         case 7:
-                            var skills = fr.GetSkil(tid);
-                            foreach (var value in skills)
-                            {
-                                Console.WriteLine(value.ToString());
-                            }
-                            Console.ReadKey();
+                            //var skills = bl.GetSkil(tid);
+                            //foreach (var value in skills)
+                            //{
+                            //    Console.WriteLine(value.ToString());
+                            //}
+                            //Console.ReadKey();
                             break;
                         case 8:
-                            var values = fr.GetTrainers();
+                            var values = bl.GetTrainers();
                             foreach(var value in values)
                             {
                                 Console.WriteLine(value.ToString());

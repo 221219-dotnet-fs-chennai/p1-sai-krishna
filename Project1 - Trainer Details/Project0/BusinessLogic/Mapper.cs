@@ -16,7 +16,7 @@ namespace BusinessLogic
         {
             return new EF.Trainer()
             {
-                TrainerId = t.Id,
+                
                 Email= t.Email,
                 Name= t.Name,
                 Gender= t.Gender,
@@ -28,6 +28,31 @@ namespace BusinessLogic
                 AboutMe= t.AboutMe
 
             };
+        }
+
+        public static Models.Trainer TrainerMapper(EF.Trainer t)
+        {
+            return new Models.Trainer()
+            {
+               
+                Email = t.Email,
+                Name = t.Name,
+                Gender = t.Gender,
+                PhoneNo = t.PhoneNo,
+                Password = t.Password,
+                City = t.City,
+                State = t.State,
+                Pincode = t.Pincode,
+                AboutMe = t.AboutMe
+
+            };
+        }
+
+        
+
+        public static List<Models.Trainer> TrainerMapper(List<EF.Trainer> t)
+        {
+            return t.Select(TrainerMapper).ToList();    
         }
 
         public static EF.Skill SkillMapper(Models.Skill s)

@@ -25,10 +25,7 @@ public partial class Trainer
 
     public string? AboutMe { get; set; }
 
-    public override string ToString()
-    {
-        return ($" Name: {Name}\n Gender: {Gender}\n Email: {Email}\t\t\tPhone No: {PhoneNo}\n Address: {City}, {State}, {Pincode}\n About Me: {AboutMe}\n");
-    }
+  
 
     public virtual ICollection<Achivement> Achivements { get; } = new List<Achivement>();
 

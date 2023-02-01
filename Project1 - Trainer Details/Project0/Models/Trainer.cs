@@ -5,30 +5,15 @@ namespace Models
 {
     public class Trainer
     {
-        public string pincode;
+       
         public string phone,email;
         string? gender;
         //city,state,zipcode,aboutme;
         public int Id { get; set;}
         public string Name { get; set;}
-        public string Gender
+        public string? Gender
         {
-            get
-            {
-                return gender;
-            }
-            set 
-            {
-                if (Regex.IsMatch(value, "^(M|F)$"))
-                {
-                    gender = value;
-                }
-                else
-                {
-                    gender = "false";
-                }
-                
-            }
+            get;set;
         }
         public string PhoneNo {
             get { 
@@ -56,25 +41,10 @@ namespace Models
             }
         }
         public string Password { get; set;}
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Pincode {
-            get
-            {
-                return pincode;
-            }
-            set
-            {
-                string pattern = @"^[1-9]\d{5}$";
-                var IsPincodeCorrect = Regex.IsMatch(value, pattern);
-                if (IsPincodeCorrect)
-                    pincode = value;
-                else
-                    //Console.WriteLine("Please add a valid Pincode with 6 digits only");
-                    pincode= "false";
-            }
-        }
-        public string AboutMe { get; set; }
+        public string? City { get; set; }
+        public string? State { get; set; }
+        public string? Pincode { get; set; }
+        public string? AboutMe { get; set; }
 
         public bool Login { get; set; }
 

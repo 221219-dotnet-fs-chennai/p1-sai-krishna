@@ -16,7 +16,7 @@ namespace Data
         //using SqlConnection con=new SqlConnection(string connectionString);
         string connectionString;
         SqlConnection con1;
-        IFluentApiRepo fr=new FluentApiRepo();
+        ILogic fr=new logic();
         
         public skillTable(string connectionString)
         {
@@ -32,7 +32,7 @@ namespace Data
             Console.WriteLine("Enter Description about your Skill");
             s.Description = Console.ReadLine();
             s.Id= id;
-            fr.addSkill(Mapper.SkillMapper(s));
+            //fr.addSkill(Mapper.SkillMapper(s));
 
         }
 
@@ -44,7 +44,7 @@ namespace Data
             Console.WriteLine("Enter the Skill Name you want to Delete");
             s.Name = Console.ReadLine();
             s.Id= id;
-            fr.removeSkill(Mapper.SkillMapper(s));
+            //fr.removeSkill(Mapper.SkillMapper(s));
 
            
            
@@ -124,12 +124,12 @@ namespace Data
         {
             
             Console.WriteLine("============================Skills Present=======================\n");
-            var skills = fr.GetSkil(id);
-            foreach (var value in skills)
-            {
-                Console.WriteLine(value.ToString());
-            }
-            Console.ReadKey();
+            //var skills = fr.GetSkil(id);
+            //foreach (var value in skills)
+            //{
+            //    Console.WriteLine(value.ToString());
+            //}
+            //Console.ReadKey();
 
         }
     }
