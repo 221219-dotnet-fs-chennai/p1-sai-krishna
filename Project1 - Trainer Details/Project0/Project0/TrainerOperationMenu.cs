@@ -16,7 +16,7 @@ namespace UI_Console
     {
         string username;
         Trainer t=new Trainer();
-        ILogic bl=new logic();
+        ITrainerLogic bl=new logic();
         
         
         int tid;

@@ -1,9 +1,9 @@
 ﻿using Data__FluentApi.Entities;
 namespace Data__FluentApi
 {
-    public  class FluentMethods:Irepo
+    public  class FluentMethods:Irepo,ISkillRepo
     {
-        Project0Context context = new Project0Context();
+        TrainerContext context = new TrainerContext();
 
         public bool SignIn(string uemail)
         {
@@ -44,6 +44,35 @@ namespace Data__FluentApi
             context.Trainers.Remove(trainer);
             context.SaveChanges();
             return trainer;
+        }
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+        public Skill addSkill(Skill s)
+        {
+            context.Skills.Add(s);
+            context.SaveChanges();
+            return s;
+        }
+
+        public Skill updateSkill(Skill s)
+        {
+            context.Skills.Update(s);
+            context.SaveChanges();
+            return s;
+        }
+
+        public Skill removeSkill(Skill s)
+        {
+            context.Skills.Remove(s);
+            context.SaveChanges();
+            return s;
+        }
+
+        public List<Skill> GetSkil(int id)
+        {
+            var skills = from s in context.Skills
+                         where s.TrainerId == id
+                         select s;
+            return skills.ToList();
         }
 
         //public void addSkill(Skill s)

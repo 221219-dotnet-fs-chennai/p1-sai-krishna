@@ -16,7 +16,7 @@ namespace Data
         //using SqlConnection con=new SqlConnection(string connectionString);
         string connectionString;
         SqlConnection con1;
-        ILogic fr=new logic();
+        ITrainerLogic fr=new logic();
         
         public skillTable(string connectionString)
         {

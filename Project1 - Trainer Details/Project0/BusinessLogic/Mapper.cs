@@ -65,5 +65,21 @@ namespace BusinessLogic
 
             };
         }
+
+        public static Models.Skill SkillMapper(EF.Skill s)
+        {
+            return new Models.Skill()
+            {
+                Id=s.TrainerId,
+                Name = s.SkillName,
+                Description = s.Description
+
+            };
+        }
+
+        public static List<Models.Skill> SkillMapper(List<EF.Skill> t)
+        {
+            return t.Select(SkillMapper).ToList();
+        }
     }
 }

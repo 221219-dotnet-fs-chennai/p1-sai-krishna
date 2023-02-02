@@ -14,7 +14,7 @@ namespace Data
     {
 
         string connectionString;
-        ILogic fr = new logic();
+        ITrainerLogic fr = new logic();
         
 
         public trainerTable(string connectionString)

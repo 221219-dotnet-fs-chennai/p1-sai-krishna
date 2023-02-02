@@ -7,7 +7,7 @@ using Data__FluentApi.Entities;
 
 namespace BusinessLogic
 {
-    public interface ILogic
+    public interface ITrainerLogic
     {
        
         public  List<Models.Trainer> GetTrainers();
@@ -18,11 +18,6 @@ namespace BusinessLogic
         public Models.Trainer updateTrainer(Models.Trainer trainer);
         public Models.Trainer deleteTrainer(Models.Trainer trainer);
 
-        //public void addSkill(Skill s);
-
-        ////public void updateSkill(Skill skill);
-        //public void removeSkill(Skill s);
-
-        //public List<Skill> GetSkil(int id);
+        
     }
 }

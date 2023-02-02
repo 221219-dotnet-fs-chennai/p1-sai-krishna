@@ -75,16 +75,39 @@ namespace UI_Console
         //        goto ExceptionConn;
         //    }
 
-            ILogic bl = new logic();
+            ITrainerLogic bl = new logic();
+            ISkillLogic bs=new logic();
             Models.Trainer t = new Models.Trainer();
+            Models.Skill ms=new Models.Skill();
             Models.Trainer t1 = new Models.Trainer();
             Console.WriteLine("Enter your email");
             t.Email = Console.ReadLine();
-           
-            t.Id = Validation.IdByEmail(t.email);
 
-            t1 = bl.deleteTrainer(t);
-            Console.WriteLine(t1.ToString());
+            //t.Id = Validation.IdByEmail(t.email);
+            //t.Name = "trainedfbbame";
+            //t.Password = "trainedfbord";
+            //t.PhoneNo = "9874563210";
+            //t.Gender = "F";
+            //t.City = "trainefsby";
+            //t.State = "trainerfbb";
+            //t.Pincode = "560102";
+            //t.AboutMe =" trainerdfbbfde";
+            //t1 = bl.updateTrainer(t);
+            //Console.WriteLine(t1.ToString());
+            //var skills=bs.GetSkill(t.Email);
+            //foreach (Models.Skill s in skills)
+            //{
+            //    Console.WriteLine(s.ToString());
+            //}
+            Console.WriteLine("Enter your skill name");
+            string skName = Console.ReadLine();
+            //Console.WriteLine("Enter your skill");
+            //ms.Name = Console.ReadLine();
+            //Console.WriteLine("Enter your description");
+            //ms.Description = Console.ReadLine();
+            Console.WriteLine(bs.deleteSkill(t.Email, skName));
+            //Console.WriteLine(bs.updateSkill(t.Email,skName,ms));
+           
 
 
 

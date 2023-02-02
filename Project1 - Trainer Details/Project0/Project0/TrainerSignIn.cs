@@ -16,7 +16,7 @@ namespace UI_Console
     {
         readonly string connectionString;
         Trainer t = new Trainer();
-        ILogic fr = new logic();
+        ITrainerLogic fr = new logic();
 
 
         public TrainerSignIn(string connectionString)

@@ -10,11 +10,16 @@ namespace BusinessLogic
 {
     public class Validation
     {
-        static Project0Context context = new Project0Context();
+        static TrainerContext context = new TrainerContext();
         public static int IdByEmail(string email)
         {
-            var row= context.Trainers.Where(id => id.Email == email).First();
+            var row = context.Trainers.Where(id => id.Email == email).First();
             return row.TrainerId;
+        }
+
+        public static Skill skillByName(int id,string name)
+        {
+            return context.Skills.Where(s=> s.TrainerId==id && s.SkillName==name).First();
         }
     }
 }

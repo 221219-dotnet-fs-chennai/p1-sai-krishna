@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data__FluentApi.Entities;
 
-public partial class Project0Context : DbContext
+public partial class TrainerContext : DbContext
 {
-    public Project0Context()
+    public TrainerContext()
     {
     }
 
-    public Project0Context(DbContextOptions<Project0Context> options)
+    public TrainerContext(DbContextOptions<TrainerContext> options)
         : base(options)
     {
     }
