@@ -34,7 +34,7 @@ namespace BusinessLogic
         {
             return new Models.Trainer()
             {
-               
+                Id=t.TrainerId,
                 Email = t.Email,
                 Name = t.Name,
                 Gender = t.Gender,
@@ -54,7 +54,7 @@ namespace BusinessLogic
         {
             return t.Select(TrainerMapper).ToList();    
         }
-
+//------------------------------------------------------------------------------------------------------------------------------------------
         public static EF.Skill SkillMapper(Models.Skill s)
         {
             return new EF.Skill()
@@ -80,6 +80,33 @@ namespace BusinessLogic
         public static List<Models.Skill> SkillMapper(List<EF.Skill> t)
         {
             return t.Select(SkillMapper).ToList();
+        }
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static EF.Achivement AchivementMapper(Models.Achivements s)
+        {
+            return new EF.Achivement()
+            {
+                TrainerId = s.Id,
+                Title = s.Title,
+                Description = s.Description
+
+            };
+        }
+
+        public static Models.Achivements AchivementMapper(EF.Achivement s)
+        {
+            return new Models.Achivements()
+            {
+                Id = s.TrainerId,
+                Title = s.Title,
+                Description = s.Description
+
+            };
+        }
+
+        public static List<Models.Achivements> AchivementMapper(List<EF.Achivement> t)
+        {
+            return t.Select(AchivementMapper).ToList();
         }
     }
 }

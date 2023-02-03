@@ -10,16 +10,31 @@ namespace BusinessLogic
 {
     public class Validation
     {
-        static TrainerContext context = new TrainerContext();
-        public static int IdByEmail(string email)
+         TrainerContext context;
+        public Validation(TrainerContext _context)
         {
-            var row = context.Trainers.Where(id => id.Email == email).First();
-            return row.TrainerId;
+            context = _context;
         }
 
-        public static Skill skillByName(int id,string name)
+        public  int IdByEmail(string email)
+        {
+            var row = context.Trainers.Where(id => id.Email == email).FirstOrDefault();
+            return row.TrainerId;
+        }
+        public Trainer trainerByEmail(string email)
+        {
+            var row = context.Trainers.Where(id => id.Email == email).FirstOrDefault();
+            return row;
+        }
+
+        public  Skill skillByName(int id,string name)
         {
             return context.Skills.Where(s=> s.TrainerId==id && s.SkillName==name).First();
+        }
+
+        public Achivement achivementByTitle(int id, string title)
+        {
+            return context.Achivements.Where(s => s.TrainerId == id && s.Title == title).First();
         }
     }
 }

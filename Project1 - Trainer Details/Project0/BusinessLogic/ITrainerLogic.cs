@@ -14,9 +14,9 @@ namespace BusinessLogic
 
         public bool SignIn(string uemail);
         public Models.Trainer addTrainer(Models.Trainer trainer);
-        public Models.Trainer addAdditionalDeatils(Models.Trainer trainer);
-        public Models.Trainer updateTrainer(Models.Trainer trainer);
-        public Models.Trainer deleteTrainer(Models.Trainer trainer);
+        //public Models.Trainer addAdditionalDeatils(Models.Trainer trainer);
+        public Models.Trainer updateTrainer(string email,Models.Trainer trainer);
+        public Models.Trainer deleteTrainer(string email);
 
         
     }
