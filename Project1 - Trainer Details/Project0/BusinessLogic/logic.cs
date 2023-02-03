@@ -7,19 +7,21 @@ using Models;
 namespace BusinessLogic
 {
 
-    public class logic : ITrainerLogic,ISkillLogic,IAchivemensLogic
+    public class logic : ITrainerLogic,ISkillLogic,IAchivemensLogic,IEducationLogic
     {
         Validation v;
         TrainerContext context;
         ITrainerRepo ef;
         ISkillRepo efs;
         IAchivementsRepo efa;
+        IEducationRepo efe;
 
-        public logic(ITrainerRepo _ef, ISkillRepo efs,IAchivementsRepo _efa ,Validation _v, TrainerContext _context)
+        public logic(ITrainerRepo _ef, ISkillRepo efs,IAchivementsRepo _efa ,IEducationRepo _efe,Validation _v, TrainerContext _context)
         {
             ef = _ef;
             this.efs = efs;
             efa = _efa;
+            efe = _efe;
             v= _v;
             context = _context;
         }
@@ -110,7 +112,7 @@ namespace BusinessLogic
         {
             var achToUpdate = v.achivementByTitle(v.IdByEmail(email), title);
             achToUpdate.Title = a.Title;
-            achToUpdate.Title = a.Description;
+            achToUpdate.Description = a.Description;
             return Mapper.AchivementMapper(efa.updateAchivement(achToUpdate));
         }
 
@@ -125,6 +127,38 @@ namespace BusinessLogic
             int id = v.IdByEmail(email);
             return Mapper.AchivementMapper(efa.GeAchivement(id));
         }
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public Models.Education addEducation(string email, Models.Education e)
+        {
+            e.Id = v.IdByEmail(email);
+            return Mapper.EducationMapper(efe.addEducation(Mapper.EducationMapper(e)));
+        }
+
+        public Models.Education updateEducation(string email, string eduName, Models.Education e)
+        {
+            var eduToUpdate = v.educationByName(v.IdByEmail(email), eduName);
+            eduToUpdate.InstituteName = e.InstituteName;
+            eduToUpdate.Degree = e.Degree;
+            eduToUpdate.StartDate = e.StartDate;
+            eduToUpdate.EndDate = e.EndDate;
+            eduToUpdate.Cgpa = e.Score;
+            return Mapper.EducationMapper(efe.updateEducation(eduToUpdate));
+        }
+
+        public Models.Education deleteEducation(string email, string eduname)
+        {
+            var eduToDelete = v.educationByName(v.IdByEmail(email), eduname);
+            return Mapper.EducationMapper(efe.removeEducation(eduToDelete));
+        }
+
+        public List<Models.Education> GetEducation(string email)
+        {
+            int id = v.IdByEmail(email);
+            return Mapper.EducationMapper(efe.GeEducation(id));
+        }
+
+ //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     }
 
  

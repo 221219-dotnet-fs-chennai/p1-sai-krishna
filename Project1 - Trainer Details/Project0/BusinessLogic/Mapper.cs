@@ -108,5 +108,39 @@ namespace BusinessLogic
         {
             return t.Select(AchivementMapper).ToList();
         }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static EF.Education EducationMapper(Models.Education s)
+        {
+            return new EF.Education()
+            {
+                TrainerId = s.Id,
+                InstituteName= s.InstituteName,
+                Degree= s.Degree,
+                StartDate= s.StartDate,
+                EndDate= s.EndDate,
+                Cgpa=s.Score,
+
+            };
+        }
+
+        public static Models.Education EducationMapper(EF.Education s)
+        {
+            return new Models.Education()
+            {
+                Id = s.TrainerId,
+                InstituteName=s.InstituteName,
+                Degree= s.Degree,
+                StartDate= s.StartDate,
+                EndDate= s.EndDate,
+                Score=s.Cgpa,
+
+            };
+        }
+
+        public static List<Models.Education> EducationMapper(List<EF.Education> t)
+        {
+            return t.Select(EducationMapper).ToList();
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Data__FluentApi.Entities;
 namespace Data__FluentApi
 {
-    public  class FluentMethods:ITrainerRepo,ISkillRepo,IAchivementsRepo
+    public  class FluentMethods:ITrainerRepo,ISkillRepo,IAchivementsRepo,IEducationRepo
     {
         TrainerContext context;
         public FluentMethods(TrainerContext context)
@@ -110,6 +110,35 @@ namespace Data__FluentApi
             return achivements.ToList();
         }
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public Education addEducation(Education e)
+        {
+            context.Educations.Add(e);
+            context.SaveChanges();
+            return e;
+        }
+
+        public Education updateEducation(Education e)
+        {
+            context.Educations.Update(e);
+            context.SaveChanges();
+            return e;
+        }
+
+        public Education removeEducation(Education e)
+        {
+            context.Educations.Remove(e);
+            context.SaveChanges();
+            return e;
+        }
+
+        public List<Education> GeEducation(int id)
+        {
+            var Educations = from a in context.Educations
+                              where a.TrainerId == id
+                              select a;
+            return Educations.ToList();
+        }
     }
 }
     

@@ -36,5 +36,10 @@ namespace BusinessLogic
         {
             return context.Achivements.Where(a => a.TrainerId == id && a.Title == title).First();
         }
+
+        public Education educationByName(int id, string name)
+        {
+            return context.Educations.Where(a => a.TrainerId == id && a.InstituteName == name).First();
+        }
     }
 }

@@ -22,6 +22,9 @@ builder.Services.AddScoped<ISkillLogic, logic>();
 builder.Services.AddScoped<IAchivementsRepo, FluentMethods>();
 builder.Services.AddScoped<IAchivemensLogic, logic>();
 
+builder.Services.AddScoped<IEducationRepo, FluentMethods>();
+builder.Services.AddScoped<IEducationLogic, logic>();
+
 builder.Services.AddScoped<Validation, Validation>();
 
 

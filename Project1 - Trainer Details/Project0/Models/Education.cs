@@ -11,10 +11,10 @@ namespace Models
     public class Education
     {
         string sdate, edate;
-        public int Id{get;set;}
-        public string InstituteName { get; set; }
-        public string Degree { get; set; }
-        public string StartDate
+        public int? Id{get;set;}
+        public string? InstituteName { get; set; }
+        public string? Degree { get; set; }
+        public string? StartDate
         {
             get
             {
@@ -30,7 +30,7 @@ namespace Models
                     sdate = "false";
             }
         }
-        public string EndDate
+        public string? EndDate
         {
             get
             {
@@ -46,7 +46,7 @@ namespace Models
                     edate = "false";
             }
         }
-        public string Score { get; set; }
+        public string? Score { get; set; }
 
 
     }
