@@ -34,7 +34,7 @@ namespace BusinessLogic
 
         public Achivement achivementByTitle(int id, string title)
         {
-            return context.Achivements.Where(s => s.TrainerId == id && s.Title == title).First();
+            return context.Achivements.Where(a => a.TrainerId == id && a.Title == title).First();
         }
     }
 }
