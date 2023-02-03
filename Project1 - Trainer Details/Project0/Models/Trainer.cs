@@ -46,13 +46,11 @@ namespace Models
         public string? Pincode { get; set; }
         public string? AboutMe { get; set; }
 
-        public bool Login { get; set; }
-
-        public bool SignUp { get; set; }
+ 
 
         public override string ToString()
         {
-            return($" Name: {Name}\n Gender: {Gender}\n Email: {Email}\t\t\tPhone No: {PhoneNo}\n Address: {City}, {State}, {Pincode}\n About Me: {AboutMe}\n"); 
+            return($" {Id}-Name: {Name}\n Gender: {Gender}\n Email: {Email}\t\t\tPhone No: {PhoneNo}\n Address: {City}, {State}, {Pincode}\n About Me: {AboutMe}\n"); 
         }
 
 

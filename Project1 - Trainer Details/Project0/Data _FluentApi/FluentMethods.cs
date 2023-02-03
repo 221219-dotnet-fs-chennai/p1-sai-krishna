@@ -1,9 +1,13 @@
 ﻿using Data__FluentApi.Entities;
 namespace Data__FluentApi
 {
-    public  class FluentMethods:Irepo,ISkillRepo
+    public  class FluentMethods:ITrainerRepo,ISkillRepo,IAchivementsRepo
     {
-        TrainerContext context = new TrainerContext();
+        TrainerContext context;
+        public FluentMethods(TrainerContext context)
+        {
+            this.context = context;
+        }
 
         public bool SignIn(string uemail)
         {
@@ -20,8 +24,6 @@ namespace Data__FluentApi
 
         public List<Trainer> GetTrainers()
         {
-
-
             return context.Trainers.ToList();
         }
 
@@ -45,7 +47,7 @@ namespace Data__FluentApi
             context.SaveChanges();
             return trainer;
         }
-//---------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------
         public Skill addSkill(Skill s)
         {
             context.Skills.Add(s);
@@ -75,8 +77,38 @@ namespace Data__FluentApi
             return skills.ToList();
         }
 
-       
 
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+           
+        public Achivement addAchivement(Achivement a)
+        {
+            context.Achivements.Add(a);
+            context.SaveChanges();
+            return a;
+        }
+
+        public Achivement updateAchivement(Achivement a)
+        {
+            context.Achivements.Update(a);
+            context.SaveChanges();
+            return a;
+        }
+
+        public Achivement removeAchivement(Achivement a)
+        {
+            context.Achivements.Remove(a);
+            context.SaveChanges();
+            return a;
+        }
+
+        public List<Achivement> GeAchivement(int id)
+        {
+            var achivements = from a in context.Achivements
+                         where a.TrainerId == id
+                         select a;
+            return achivements.ToList();
+        }
 
     }
 }
