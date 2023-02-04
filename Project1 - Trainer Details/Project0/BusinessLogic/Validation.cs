@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data__FluentApi.Entities;
 
+
 namespace BusinessLogic
 {
     public class Validation
@@ -46,5 +47,44 @@ namespace BusinessLogic
         {
             return context.Experiences.Where(a => a.TrainerId == id && a.CmpName == name).First();
         }
+
+        public bool isEmailPresent(string email)
+        {
+            try
+            {
+                if (context.Trainers.Where(t => t.Email == email).First() != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                return false;
+            }
+        }
+        public bool signIn(string email,string password)
+        {
+            try
+            {
+                if (context.Trainers.Where(t => t.Email == email && t.Password == password).First()!= null)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new System.InvalidOperationException();
+                }
+            }
+            catch (System.InvalidOperationException)
+            {
+                return false;
+            }
+            
+        }
+
     }
 }

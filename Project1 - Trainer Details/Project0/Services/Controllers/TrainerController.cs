@@ -10,15 +10,15 @@ namespace Services.Controllers
     public class TrainerController : ControllerBase
     {
         ITrainerLogic logic;
-        
-        public TrainerController(ITrainerLogic _logic)
+        Validation v;
+        public TrainerController(ITrainerLogic _logic,Validation _v)
         {
             logic = _logic;
-          
+            v = _v;
         }
        
 
-        [HttpGet]
+        [HttpGet("getTrainerDetails")]
         public ActionResult Get(string email)
         {
             var trainer=logic.GetTrainer(email);
@@ -34,8 +34,34 @@ namespace Services.Controllers
         [HttpPost("signUp")]
         public ActionResult Post(Trainer t)
         {
-           
-            return Ok(logic.addTrainer(t));
+           if(v.isEmailPresent(t.email)==false)
+            {
+                return Ok(logic.addTrainer(t));
+            }
+            else
+            {
+                return BadRequest("Email already exists,please sign in");
+            }
+        }
+
+        [HttpGet("signIn")]
+        public ActionResult SignIn(string email,string password)
+        {
+            if (v.isEmailPresent(email) == true)
+            {
+                if(v.signIn(email,password))
+                {
+                    return Ok("Successful login");
+                }
+                else
+                {
+                    return BadRequest("Wrong passowrd");
+                }
+            }
+            else
+            {
+                return BadRequest("Email does not exists,please sign up");
+            }
         }
 
         [HttpPut("UpdateTrainer")]

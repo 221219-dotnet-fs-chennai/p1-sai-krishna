@@ -11,7 +11,7 @@ namespace Data__FluentApi
     {
         public Trainer GetTrainer(int id);
 
-        public bool SignIn(string uemail);
+       
         public Trainer addTrainer(Trainer trainer);
        
         public Trainer updateTrainer(Trainer trainer);
