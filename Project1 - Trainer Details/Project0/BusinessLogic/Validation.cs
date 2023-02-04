@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Data__FluentApi.Entities;
 
@@ -24,8 +25,8 @@ namespace BusinessLogic
         }
         public Trainer trainerByEmail(string email)
         {
-            var row = context.Trainers.Where(id => id.Email == email).FirstOrDefault();
-            return row;
+            return context.Trainers.Where(id => id.Email == email).First();
+            
         }
 
         public  Skill skillByName(int id,string name)
@@ -84,6 +85,29 @@ namespace BusinessLogic
                 return false;
             }
             
+        }
+
+        public bool isValidEmail(string email)
+        {
+            string pattern = @"^\w+@\w+\.\w{2,4}$";
+            if(Regex.IsMatch(email, pattern))
+            {
+                return true;
+            }
+            else
+            { return false; }
+
+        }
+        public bool isValidPhone(string phone)
+        {
+            string pattern = @"^[6-9]\d{9}$";
+            if (Regex.IsMatch(phone, pattern))
+            {
+                return true;
+            }
+            else
+            { return false; }
+
         }
 
     }

@@ -33,6 +33,8 @@ namespace BusinessLogic
 
         public Models.Trainer addTrainer(Models.Trainer trainer)
         {
+            trainer.Email = v.isValidEmail(trainer.Email) ? trainer.Email : throw new InvalidOperationException("invalid string fromat");
+            trainer.PhoneNo=v.isValidPhone(trainer.PhoneNo)? trainer.PhoneNo : throw new InvalidOperationException("invalid phone number format");
             return(Mapper.TrainerMapper(ef.addTrainer(Mapper.TrainerMapper(trainer))));
         }
 
@@ -50,7 +52,7 @@ namespace BusinessLogic
             var t = v.trainerByEmail(email);
             t.Name = trainer.Name;
             t.Password = trainer.Password;
-            t.PhoneNo = trainer.PhoneNo;
+            t.PhoneNo = v.isValidPhone(trainer.PhoneNo) ? trainer.PhoneNo : throw new InvalidOperationException("invalid phone number format");
             t.Gender = trainer.Gender;
             t.City = trainer.City;
             t.State = trainer.State;

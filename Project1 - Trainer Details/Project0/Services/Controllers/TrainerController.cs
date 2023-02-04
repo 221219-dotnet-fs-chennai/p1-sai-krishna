@@ -11,17 +11,18 @@ namespace Services.Controllers
     {
         ITrainerLogic logic;
         Validation v;
-        public TrainerController(ITrainerLogic _logic,Validation _v)
+        public TrainerController(ITrainerLogic _logic, Validation _v)
         {
             logic = _logic;
             v = _v;
         }
        
-
+        
         [HttpGet("getTrainerDetails")]
         public ActionResult Get(string email)
         {
-            var trainer=logic.GetTrainer(email);
+            
+            var trainer = logic.GetTrainer(email);
             if (trainer != null)
             {
                 return Ok(trainer);
@@ -31,10 +32,11 @@ namespace Services.Controllers
                 return NoContent();
             }
         }
+    
         [HttpPost("signUp")]
         public ActionResult Post(Trainer t)
         {
-           if(v.isEmailPresent(t.email)==false)
+            if (v.isEmailPresent(t.email) == false)
             {
                 return Ok(logic.addTrainer(t));
             }
@@ -45,11 +47,11 @@ namespace Services.Controllers
         }
 
         [HttpGet("signIn")]
-        public ActionResult SignIn(string email,string password)
+        public ActionResult SignIn(string email, string password)
         {
             if (v.isEmailPresent(email) == true)
             {
-                if(v.signIn(email,password))
+                if (v.signIn(email, password))
                 {
                     return Ok("Successful login");
                 }
@@ -65,16 +67,17 @@ namespace Services.Controllers
         }
 
         [HttpPut("UpdateTrainer")]
-        public ActionResult Put([FromHeader]string email,[FromBody]Trainer t)
+        public ActionResult Put([FromHeader] string email, [FromBody] Trainer t)
         {
-            return Ok(logic.updateTrainer(email,t));
+            return Ok(logic.updateTrainer(email, t));
         }
 
         [HttpDelete("DeleteAccount")]
-        public ActionResult Delete([FromHeader]string email)
+        public ActionResult Delete([FromHeader] string email)
         {
             return Ok(logic.deleteTrainer(email));
         }
-       
     }
+
+    
 }

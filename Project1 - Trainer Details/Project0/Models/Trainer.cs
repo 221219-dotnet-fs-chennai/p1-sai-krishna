@@ -6,9 +6,8 @@ namespace Models
     public class Trainer
     {
        
-        public string phone,email;
-        string? gender;
-        //city,state,zipcode,aboutme;
+        
+        
         public int Id { get; set;}
         public string Name { get; set;}
         public string? Gender
@@ -16,29 +15,10 @@ namespace Models
             get;set;
         }
         public string PhoneNo {
-            get { 
-                return phone; 
-            }
-            set
-            {               
-                    phone = value;                
-            }
+            get;set;
         }
         public string Email
-        {
-            get
-            {
-                return email; ;
-            }
-            set
-            {
-                string pattern = @"^\w+@\w+\.\w{2,4}$";
-                var IsEmailCorrect = Regex.IsMatch(value, pattern);
-                if (IsEmailCorrect)
-                    email = value;
-                else
-                    email="false";
-            }
+        { get;set;
         }
         public string Password { get; set;}
         public string? City { get; set; }

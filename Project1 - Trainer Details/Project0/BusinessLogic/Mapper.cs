@@ -7,17 +7,23 @@ using Data__FluentApi;
 using EF=Data__FluentApi.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Models;
+using System.Text.RegularExpressions;
 
 namespace BusinessLogic
 {
     public class Mapper
     {
+        static Validation v;
+        public Mapper(Validation _v)
+        {
+            v = _v;
+        }
         public static EF.Trainer TrainerMapper(Models.Trainer t)
         {
             return new EF.Trainer()
             {
                 
-                Email= t.Email,
+                Email=t.Email,
                 Name= t.Name,
                 Gender= t.Gender,
                 PhoneNo= t.PhoneNo, 
@@ -30,15 +36,18 @@ namespace BusinessLogic
             };
         }
 
+      
+        
+
         public static Models.Trainer TrainerMapper(EF.Trainer t)
         {
             return new Models.Trainer()
             {
-                Id=t.TrainerId,
+                Id = t.TrainerId,
                 Email = t.Email,
                 Name = t.Name,
                 Gender = t.Gender,
-                PhoneNo = t.PhoneNo,
+                PhoneNo =t.PhoneNo,
                 Password = t.Password,
                 City = t.City,
                 State = t.State,
