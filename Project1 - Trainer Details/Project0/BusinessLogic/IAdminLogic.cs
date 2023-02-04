@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,5 +12,12 @@ namespace BusinessLogic
     {
         public List<Models.Trainer> GetTrainers();
         public List<Models.Trainer> GetTrainersByGender(string g);
+        public List<Models.Trainer> GetTrainersByCity(string g);
+        public List<Models.Trainer> GetTrainersByPincode(string g);
+        public Dictionary<string, string[]> GetTrainersBySkill(string g);
+        public Dictionary<string, List<List<string>>> GetAllTrainersBySkill();
+
+
+
     }
 }

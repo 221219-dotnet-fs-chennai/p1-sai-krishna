@@ -12,7 +12,7 @@ namespace BusinessLogic
        
         public  Models.Trainer GetTrainer(string email);
 
-        public bool SignIn(string uemail);
+       
         public Models.Trainer addTrainer(Models.Trainer trainer);
         
         public Models.Trainer updateTrainer(string email,Models.Trainer trainer);

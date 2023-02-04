@@ -42,12 +42,7 @@ namespace BusinessLogic
             return  Mapper.TrainerMapper(ef.GetTrainer(id));
             
         }
-        public bool SignIn(string uemail)
-        {
-
-            var email = context.Trainers.Where(t => t.Email == uemail).First();
-            return true;
-        }
+       
 
        
         public Models.Trainer updateTrainer(string email,Models.Trainer trainer)

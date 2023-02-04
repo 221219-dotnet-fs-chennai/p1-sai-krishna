@@ -11,5 +11,10 @@ namespace Data__FluentApi
     {
         public List<Trainer> GetTrainers();
         public List<Trainer> GetTrainersByGender(string g);
+        public List<Trainer> GetTrainersByCity(string g);
+        public List<Trainer> GetTrainersByPincode(string g);
+        public Dictionary<string, string[]> GetTrainersBySkill(string g);
+
+        public Dictionary<string, List<List<string>>> GetAllTrainersBySkill();
     }
 }

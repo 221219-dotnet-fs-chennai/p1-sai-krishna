@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using Data__FluentApi;
@@ -21,9 +22,28 @@ namespace BusinessLogic
            return Mapper.TrainerMapper(adRepo.GetTrainers());
         }
 
-        public List<Models.Trainer> GetTrainersByGender(string g)
+        public List<Models.Trainer> GetTrainersByCity(string city)
         {
-            return Mapper.TrainerMapper(adRepo.GetTrainersByGender(g));
+            return Mapper.TrainerMapper(adRepo.GetTrainersByCity(city));
+        }
+
+        public List<Models.Trainer> GetTrainersByGender(string gender)
+        {
+            return Mapper.TrainerMapper(adRepo.GetTrainersByGender(gender));
+        }
+
+        public List<Models.Trainer> GetTrainersByPincode(string pin)
+        {
+            return Mapper.TrainerMapper(adRepo.GetTrainersByPincode(pin));
+        }
+
+        public Dictionary<string, string[]> GetTrainersBySkill(string skill)
+        {
+            return (adRepo.GetTrainersBySkill(skill));
+        }
+        public Dictionary<string, List<List<string>>> GetAllTrainersBySkill()
+        {
+            return adRepo.GetAllTrainersBySkill();
         }
     }
 }

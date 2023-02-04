@@ -20,9 +20,29 @@ namespace Services.Controllers
         }
 
         [HttpGet("GetTrainersByGender")]
-        public IActionResult GetGender(string g)
+        public IActionResult GetByGender(string gender)
         {
-            return Ok(adLogic.GetTrainersByGender(g));
+            return Ok(adLogic.GetTrainersByGender(gender));
+        }
+        [HttpGet("GetTrainersByCity")]
+        public IActionResult GetByCity(string city)
+        {
+            return Ok(adLogic.GetTrainersByCity(city));
+        }
+        [HttpGet("GetTrainersByPincode")]
+        public IActionResult GetByPincode(string pincode)
+        {
+            return Ok(adLogic.GetTrainersByPincode(pincode));
+        }
+        [HttpGet("GetTrainersBySkill")]
+        public IActionResult GetBySkill(string skill)
+        {
+            return Ok(adLogic.GetTrainersBySkill(skill));
+        }
+        [HttpGet("GetAllTrainersBySkill")]
+        public IActionResult GetAllBySkill()
+        {
+            return Ok(adLogic.GetAllTrainersBySkill());
         }
     }
 }
