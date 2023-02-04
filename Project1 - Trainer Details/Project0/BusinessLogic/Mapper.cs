@@ -109,7 +109,7 @@ namespace BusinessLogic
             return t.Select(AchivementMapper).ToList();
         }
 
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+ //------------------------------------------------------------------------------------------------------------------------------------------------------------
         public static EF.Education EducationMapper(Models.Education s)
         {
             return new EF.Education()
@@ -142,5 +142,39 @@ namespace BusinessLogic
         {
             return t.Select(EducationMapper).ToList();
         }
+ //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static EF.Experience ExperienceMapper(Models.Experience s)
+        {
+            return new EF.Experience()
+            {
+                TrainerId = s.Id,
+                CmpName = s.CompanyName,
+                Role = s.Role,
+                StartDate = s.StartDate,
+                EndDate = s.EndDate,
+               
+
+            };
+        }
+
+        public static Models.Experience ExperienceMapper(EF.Experience s)
+        {
+            return new Models.Experience()
+            {
+                Id = s.TrainerId,
+                CompanyName = s.CmpName,
+                Role = s.Role,
+                StartDate = s.StartDate,
+                EndDate = s.EndDate,
+              
+
+            };
+        }
+
+        public static List<Models.Experience> ExperienceMapper(List<EF.Experience> t)
+        {
+            return t.Select(ExperienceMapper).ToList();
+        }
+
     }
 }

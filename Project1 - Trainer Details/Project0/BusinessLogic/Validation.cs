@@ -41,5 +41,10 @@ namespace BusinessLogic
         {
             return context.Educations.Where(a => a.TrainerId == id && a.InstituteName == name).First();
         }
+
+        public Experience experienceByName(int id, string name)
+        {
+            return context.Experiences.Where(a => a.TrainerId == id && a.CmpName == name).First();
+        }
     }
 }

@@ -7,7 +7,7 @@ using Models;
 namespace BusinessLogic
 {
 
-    public class logic : ITrainerLogic,ISkillLogic,IAchivemensLogic,IEducationLogic
+    public class logic : ITrainerLogic,ISkillLogic,IAchivemensLogic,IEducationLogic,IExperienceLogic
     {
         Validation v;
         TrainerContext context;
@@ -15,13 +15,15 @@ namespace BusinessLogic
         ISkillRepo efs;
         IAchivementsRepo efa;
         IEducationRepo efe;
+        IExperienceRepo efex;
 
-        public logic(ITrainerRepo _ef, ISkillRepo efs,IAchivementsRepo _efa ,IEducationRepo _efe,Validation _v, TrainerContext _context)
+        public logic(ITrainerRepo _ef, ISkillRepo efs,IAchivementsRepo _efa ,IEducationRepo _efe,IExperienceRepo _efex,Validation _v, TrainerContext _context)
         {
             ef = _ef;
             this.efs = efs;
             efa = _efa;
             efe = _efe;
+            efex = _efex;
             v= _v;
             context = _context;
         }
@@ -157,7 +159,37 @@ namespace BusinessLogic
             return Mapper.EducationMapper(efe.GeEducation(id));
         }
 
- //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------
+        public Models.Experience addExperience(string email, Models.Experience ex)
+        {
+            ex.Id = v.IdByEmail(email);
+            return Mapper.ExperienceMapper(efex.addExperience(Mapper.ExperienceMapper(ex)));
+        }
+
+        public Models.Experience updateExperience(string email, string exName, Models.Experience ex)
+        {
+            var exToUpdate = v.experienceByName(v.IdByEmail(email), exName);
+            exToUpdate.CmpName = ex.CompanyName;
+            exToUpdate.Role = ex.Role;
+            exToUpdate.StartDate = ex.StartDate;
+            exToUpdate.EndDate = ex.EndDate;
+            
+            return Mapper.ExperienceMapper(efex.updateExperience(exToUpdate));
+        }
+
+        public Models.Experience deleteExperience(string email, string exName)
+        {
+            var exToDelete = v.experienceByName(v.IdByEmail(email), exName);
+            return Mapper.ExperienceMapper(efex.removeExperience(exToDelete));
+        }
+
+        public List<Models.Experience> GetExperience(string email)
+        {
+            int id = v.IdByEmail(email);
+            return Mapper.ExperienceMapper(efex.GeExperience(id));
+        }
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }
 

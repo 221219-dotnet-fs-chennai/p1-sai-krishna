@@ -1,10 +1,10 @@
 ﻿using Data__FluentApi.Entities;
 namespace Data__FluentApi
 {
-    public  class FluentMethods:ITrainerRepo,ISkillRepo,IAchivementsRepo,IEducationRepo
+    public  class EFRepo:ITrainerRepo,ISkillRepo,IAchivementsRepo,IEducationRepo,IExperienceRepo
     {
         TrainerContext context;
-        public FluentMethods(TrainerContext context)
+        public EFRepo(TrainerContext context)
         {
             this.context = context;
         }
@@ -134,11 +134,42 @@ namespace Data__FluentApi
 
         public List<Education> GeEducation(int id)
         {
-            var Educations = from a in context.Educations
+            var educations = from a in context.Educations
                               where a.TrainerId == id
                               select a;
-            return Educations.ToList();
+            return educations.ToList();
         }
+ //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        public Experience addExperience(Experience ex)
+        {
+            context.Experiences.Add(ex);
+            context.SaveChanges();
+            return ex;
+        }
+
+        public Experience updateExperience(Experience ex)
+        {
+            context.Experiences.Update(ex);
+            context.SaveChanges();
+            return ex;
+        }
+
+        public Experience removeExperience(Experience ex)
+        {
+            context.Experiences.Remove(ex);
+            context.SaveChanges();
+            return ex;
+        }
+
+        public List<Experience> GeExperience(int id)
+        {
+            var experiences = from a in context.Experiences
+                             where a.TrainerId == id
+                             select a;
+            return experiences.ToList();
+        }
+
     }
 }
     
