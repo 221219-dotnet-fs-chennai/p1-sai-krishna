@@ -19,12 +19,12 @@ namespace Services.Controllers
        
 
         [HttpGet]
-        public ActionResult Get()
+        public ActionResult Get(string email)
         {
-            var listT=logic.GetTrainers();
-            if (listT != null)
+            var trainer=logic.GetTrainer(email);
+            if (trainer != null)
             {
-                return Ok(listT);
+                return Ok(trainer);
             }
             else
             {

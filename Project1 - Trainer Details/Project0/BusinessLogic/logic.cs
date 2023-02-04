@@ -2,6 +2,7 @@
 using System.Xml.Linq;
 using Data__FluentApi;
 using Data__FluentApi.Entities;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Models;
 
 namespace BusinessLogic
@@ -35,10 +36,10 @@ namespace BusinessLogic
             return(Mapper.TrainerMapper(ef.addTrainer(Mapper.TrainerMapper(trainer))));
         }
 
-        public List<Models.Trainer> GetTrainers()
+        public Models.Trainer GetTrainer(string email)
         {
-
-           return  Mapper.TrainerMapper(ef.GetTrainers());
+            int id = v.IdByEmail(email);
+            return  Mapper.TrainerMapper(ef.GetTrainer(id));
             
         }
         public bool SignIn(string uemail)

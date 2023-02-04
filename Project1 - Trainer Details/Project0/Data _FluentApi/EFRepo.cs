@@ -22,17 +22,14 @@ namespace Data__FluentApi
             return trainer;
         }
 
-        public List<Trainer> GetTrainers()
+        public Trainer GetTrainer(int id)
         {
-            return context.Trainers.ToList();
+          return context.Trainers.Where(t=>t.TrainerId==id).FirstOrDefault();
+                          
+           
         }
 
-        public Trainer addAdditionalDeatils(Trainer trainer)
-        {
-            context.Trainers.Update(trainer);
-            context.SaveChanges();
-            return trainer;
-        }
+       
 
         public Trainer updateTrainer(Trainer trainer)
         {

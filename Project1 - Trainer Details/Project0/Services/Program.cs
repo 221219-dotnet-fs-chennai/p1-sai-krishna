@@ -28,6 +28,9 @@ builder.Services.AddScoped<IEducationLogic, logic>();
 builder.Services.AddScoped<IExperienceRepo, EFRepo>();
 builder.Services.AddScoped<IExperienceLogic, logic>();
 
+builder.Services.AddScoped<IAdminRepo, EFAdminRepo>();
+builder.Services.AddScoped<IAdminLogic, AdminLogic>();
+
 builder.Services.AddScoped<Validation, Validation>();
 
 

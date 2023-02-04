@@ -10,11 +10,11 @@ namespace BusinessLogic
     public interface ITrainerLogic
     {
        
-        public  List<Models.Trainer> GetTrainers();
+        public  Models.Trainer GetTrainer(string email);
 
         public bool SignIn(string uemail);
         public Models.Trainer addTrainer(Models.Trainer trainer);
-        //public Models.Trainer addAdditionalDeatils(Models.Trainer trainer);
+        
         public Models.Trainer updateTrainer(string email,Models.Trainer trainer);
         public Models.Trainer deleteTrainer(string email);
 
