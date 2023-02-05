@@ -13,25 +13,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var config = builder.Configuration.GetConnectionString("TrainerDB");
 builder.Services.AddDbContext<TrainerContext>(options=>options.UseSqlServer(config));
-builder.Services.AddScoped<ITrainerRepo, EFRepo>();
-builder.Services.AddScoped<ITrainerLogic, logic>();
-
-builder.Services.AddScoped<ISkillRepo, EFRepo>();
-builder.Services.AddScoped<ISkillLogic, logic>();
-
-builder.Services.AddScoped<IAchivementsRepo, EFRepo>();
-builder.Services.AddScoped<IAchivemensLogic, logic>();
-
-builder.Services.AddScoped<IEducationRepo, EFRepo>();
-builder.Services.AddScoped<IEducationLogic, logic>();
-
-builder.Services.AddScoped<IExperienceRepo, EFRepo>();
-builder.Services.AddScoped<IExperienceLogic, logic>();
-
-builder.Services.AddScoped<IAdminRepo, EFAdminRepo>();
-builder.Services.AddScoped<IAdminLogic, AdminLogic>();
-
-builder.Services.AddScoped<Validation, Validation>();
 
 
 

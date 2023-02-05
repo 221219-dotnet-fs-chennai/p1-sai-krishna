@@ -16,35 +16,11 @@ namespace Models
         public string? Degree { get; set; }
         public string? StartDate
         {
-            get
-            {
-                return sdate;
-            }
-            set
-            {
-                string pattern = @"^((0[1-9])|(1[0-2]))/2\d{3}$";
-                var IsEmailCorrect = Regex.IsMatch(value, pattern);
-                if (IsEmailCorrect)
-                    sdate = value;
-                else
-                    sdate = "false";
-            }
+            get; set;
         }
         public string? EndDate
         {
-            get
-            {
-                return edate;
-            }
-            set
-            {
-                string pattern = @"^(((0[1-9])|(1[0-2]))/2\d{3})$|^Present$";
-                var IsEmailCorrect = Regex.IsMatch(value, pattern);
-                if (IsEmailCorrect)
-                    edate = value;
-                else
-                    edate = "false";
-            }
+            get; set;
         }
         public string? Score { get; set; }
 
