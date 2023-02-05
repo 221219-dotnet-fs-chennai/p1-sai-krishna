@@ -36,13 +36,20 @@ namespace Services.Controllers
         [HttpPost("signUp")]
         public ActionResult Post(Trainer t)
         {
-            if (v.isEmailPresent(t.Email) == false)
+            try
             {
-                return Ok(logic.addTrainer(t));
+                if (v.isEmailPresent(t.Email) == false)
+                {
+                    return Ok(logic.addTrainer(t));
+                }
+                else
+                {
+                    return BadRequest("Email already exists,please sign in");
+                }
             }
-            else
+            catch(Exception ex) 
             {
-                return BadRequest("Email already exists,please sign in");
+                return BadRequest(ex.Message+", Please try again");
             }
         }
 

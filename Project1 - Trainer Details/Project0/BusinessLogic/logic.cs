@@ -33,11 +33,11 @@ namespace BusinessLogic
 
         public Models.Trainer addTrainer(Models.Trainer trainer)
         {
-            trainer.Email = RegexValidation.isValidEmail(trainer.Email) ? trainer.Email : throw new InvalidOperationException("invalid Email fromat");
-            trainer.Password = RegexValidation.isValidPassword(trainer.Password) ? trainer.Password : throw new InvalidOperationException("invalid password fromat");
-            trainer.PhoneNo= RegexValidation.isValidPhone(trainer.PhoneNo)? trainer.PhoneNo : throw new InvalidOperationException("invalid phone number format");
-            trainer.Gender = RegexValidation.isValidGender(trainer.Gender) ? trainer.Gender : throw new InvalidOperationException("Please enter only M or F");
-            trainer.Pincode = RegexValidation.isValidZipcode(trainer.Pincode) ? trainer.Pincode : throw new InvalidOperationException("enter valid pincode");
+            trainer.Email = RegexValidation.isValidEmail(trainer.Email) ? trainer.Email : throw new UserDefinedException("Invalid email format");
+            trainer.Password = RegexValidation.isValidPassword(trainer.Password) ? trainer.Password : throw new UserDefinedException("enter Password of length 8-20 with at lest 1 Uppercase Letter,1 number");
+            trainer.PhoneNo= RegexValidation.isValidPhone(trainer.PhoneNo)? trainer.PhoneNo : throw new UserDefinedException("Enter Phone with 10 digits");
+            trainer.Gender = RegexValidation.isValidGender(trainer.Gender) ? trainer.Gender : throw new UserDefinedException("Enter M/F");
+            trainer.Pincode = RegexValidation.isValidZipcode(trainer.Pincode) ? trainer.Pincode : throw new UserDefinedException("Invalid Pincode format");
             return(Mapper.TrainerMapper(ef.addTrainer(Mapper.TrainerMapper(trainer))));
         }
 
@@ -54,12 +54,12 @@ namespace BusinessLogic
         {
             var t = v.trainerByEmail(email);
             t.Name = trainer.Name;
-            t.Password = RegexValidation.isValidPassword(trainer.Password) ? trainer.Password : throw new InvalidOperationException("invalid password fromat");
-            t.PhoneNo = RegexValidation.isValidPhone(trainer.PhoneNo) ? trainer.PhoneNo : throw new InvalidOperationException("invalid phone number format");
-            t.Gender = RegexValidation.isValidGender(trainer.Gender) ? trainer.Gender : throw new InvalidOperationException("Please enter only M or F");
+            t.Password = RegexValidation.isValidPassword(trainer.Password) ? trainer.Password : throw new UserDefinedException("Invalid email format");
+            t.PhoneNo = RegexValidation.isValidPhone(trainer.PhoneNo) ? trainer.PhoneNo : throw new UserDefinedException("Enter Phone with 10 digits");
+            t.Gender = RegexValidation.isValidGender(trainer.Gender) ? trainer.Gender : throw new UserDefinedException("Enter M/F");
             t.City = trainer.City;
             t.State = trainer.State;
-            t.Pincode = RegexValidation.isValidZipcode(trainer.Pincode) ? trainer.Pincode : throw new InvalidOperationException("enter valid pincode");
+            t.Pincode = RegexValidation.isValidZipcode(trainer.Pincode) ? trainer.Pincode : throw new UserDefinedException("Invalid pincode format");
             t.AboutMe = trainer.AboutMe;
 
            
@@ -134,8 +134,8 @@ namespace BusinessLogic
         public Models.Education addEducation(string email, Models.Education e)
         {
             e.Id = v.IdByEmail(email);
-            e.StartDate = RegexValidation.isValidStartDate(e.StartDate) ? e.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
-            e.StartDate = RegexValidation.isValidEndDate(e.StartDate) ? e.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
+            e.StartDate = RegexValidation.isValidStartDate(e.StartDate) ? e.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY)");
+            e.EndDate = RegexValidation.isValidEndDate(e.EndDate) ? e.EndDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY) or 'Present'");
             return Mapper.EducationMapper(efe.addEducation(Mapper.EducationMapper(e)));
         }
 
@@ -144,9 +144,8 @@ namespace BusinessLogic
             var eduToUpdate = v.educationByName(v.IdByEmail(email), eduName);
             eduToUpdate.InstituteName = e.InstituteName;
             eduToUpdate.Degree = e.Degree;
-            eduToUpdate.StartDate = RegexValidation.isValidStartDate(e.StartDate) ? e.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
-            eduToUpdate.EndDate = RegexValidation.isValidEndDate(e.StartDate) ? e.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
-            eduToUpdate.Cgpa = e.Score;
+            eduToUpdate.StartDate = RegexValidation.isValidStartDate(e.StartDate) ? e.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY)");
+            eduToUpdate.EndDate = RegexValidation.isValidEndDate(e.EndDate) ? e.EndDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY) or 'Present'");
             return Mapper.EducationMapper(efe.updateEducation(eduToUpdate));
         }
 
@@ -167,8 +166,8 @@ namespace BusinessLogic
         public Models.Experience addExperience(string email, Models.Experience ex)
         {
             ex.Id = v.IdByEmail(email);
-            ex.StartDate = RegexValidation.isValidStartDate(ex.StartDate) ? ex.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
-            ex.StartDate = RegexValidation.isValidEndDate(ex.StartDate) ? ex.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
+            ex.StartDate = RegexValidation.isValidStartDate(ex.StartDate) ? ex.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY)");
+            ex.StartDate = RegexValidation.isValidEndDate(ex.StartDate) ? ex.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY) or 'Present'");
             return Mapper.ExperienceMapper(efex.addExperience(Mapper.ExperienceMapper(ex)));
         }
 
@@ -177,9 +176,9 @@ namespace BusinessLogic
             var exToUpdate = v.experienceByName(v.IdByEmail(email), exName);
             exToUpdate.CmpName = ex.CompanyName;
             exToUpdate.Role = ex.Role;
-            exToUpdate.StartDate = RegexValidation.isValidStartDate(ex.StartDate) ? ex.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
-            exToUpdate.EndDate = RegexValidation.isValidEndDate(ex.StartDate) ? ex.StartDate : throw new InvalidOperationException("Please enter in correct format(MM/YYYY)");
-            
+            exToUpdate.StartDate = RegexValidation.isValidStartDate(ex.StartDate) ? ex.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY)");
+            exToUpdate.EndDate = RegexValidation.isValidEndDate(ex.StartDate) ? ex.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY) or 'Present'");
+
             return Mapper.ExperienceMapper(efex.updateExperience(exToUpdate));
         }
 
