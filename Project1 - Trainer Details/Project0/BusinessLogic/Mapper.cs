@@ -13,11 +13,9 @@ namespace BusinessLogic
 {
     public class Mapper
     {
-        static Validation v;
-        public Mapper(Validation _v)
-        {
-            v = _v;
-        }
+      
+        
+        
         public static EF.Trainer TrainerMapper(Models.Trainer t)
         {
             return new EF.Trainer()

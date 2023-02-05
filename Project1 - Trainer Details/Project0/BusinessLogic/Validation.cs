@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace BusinessLogic
 {
     public class Validation
     {
-         TrainerContext context;
+        TrainerContext context;
         public Validation(TrainerContext _context)
         {
             context = _context;
@@ -87,28 +88,7 @@ namespace BusinessLogic
             
         }
 
-        public bool isValidEmail(string email)
-        {
-            string pattern = @"^\w+@\w+\.\w{2,4}$";
-            if(Regex.IsMatch(email, pattern))
-            {
-                return true;
-            }
-            else
-            { return false; }
-
-        }
-        public bool isValidPhone(string phone)
-        {
-            string pattern = @"^[6-9]\d{9}$";
-            if (Regex.IsMatch(phone, pattern))
-            {
-                return true;
-            }
-            else
-            { return false; }
-
-        }
+        
 
     }
 }

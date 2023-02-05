@@ -36,7 +36,7 @@ namespace Services.Controllers
         [HttpPost("signUp")]
         public ActionResult Post(Trainer t)
         {
-            if (v.isEmailPresent(t.email) == false)
+            if (v.isEmailPresent(t.Email) == false)
             {
                 return Ok(logic.addTrainer(t));
             }
