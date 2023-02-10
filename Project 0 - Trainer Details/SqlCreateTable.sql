@@ -71,3 +71,20 @@ Select * from Skills;
 Select * from Achivements;
 select * from Users;
 
+ALTER TABLE Skills 
+ADD Skill_id int IDENTITY(1,1);
+
+ALTER TABLE Skills
+ADD PRIMARY KEY (Skill_id);
+
+ALTER TABLE Education
+ADD Education_id int PRIMARY KEY IDENTITY(1,1);
+
+ALTER TABLE Experience
+ADD Experience_id int PRIMARY KEY IDENTITY(1,1);
+
+DELETE from Trainer where Trainer_id>21
+
+
+ALTER TABLE Achivements
+ADD Achivements_id int PRIMARY KEY IDENTITY(1,1);
