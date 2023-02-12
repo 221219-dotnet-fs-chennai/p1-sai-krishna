@@ -37,7 +37,7 @@ namespace Services.Controllers
         [HttpGet("GetTrainersBySkill")]
         public IActionResult GetBySkill(string skill)
         {
-            return Ok(adLogic.GetTrainersBySkill(skill));
+            return Ok(adLogic.GetTrainersBySkill(skill).Values);
         }
         [HttpGet("GetAllTrainersBySkill")]
         public IActionResult GetAllBySkill()

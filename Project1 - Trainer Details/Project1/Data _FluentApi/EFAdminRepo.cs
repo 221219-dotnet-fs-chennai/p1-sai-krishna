@@ -52,7 +52,14 @@ namespace Data__FluentApi
                           }).ToList();
             foreach(var si in skil)
             {
-                ski.Add(si.SkillName, new string[] {si.Name,si.Gender});
+                if (ski.ContainsKey(si.SkillName))
+                {
+                    ski[si.SkillName] = new string[] { si.Name, si.Gender,si.Email,si.SkillName};
+                }
+                else
+                {
+                    ski.Add(si.SkillName, new string[] { si.Name, si.Gender , si.Email, si.SkillName });
+                }
             }
             return ski;
         }
