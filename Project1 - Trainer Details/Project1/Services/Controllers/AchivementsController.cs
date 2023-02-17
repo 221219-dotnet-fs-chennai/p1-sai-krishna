@@ -22,13 +22,13 @@ namespace Services.Controllers
             return Ok(skills);
         }
 
-        [HttpPut("InsertAchivement")]
-        public ActionResult Put(string email, Achivements a)
+        [HttpPost("InsertAchivement")]
+        public ActionResult Post(string email, Achivements a)
         {
             return Ok(alogic.addAchivement(email, a));
         }
-        [HttpPost("UpdateAchivement")]
-        public ActionResult Post([FromHeader] string email, [FromHeader] string achivementName, [FromBody] Achivements skill)
+        [HttpPut("UpdateAchivement")]
+        public ActionResult Put([FromHeader] string email, [FromHeader] string achivementName, [FromBody] Achivements skill)
         {
             return Ok(alogic.updateAchivement(email, achivementName, skill));
         }

@@ -19,7 +19,7 @@ namespace Services.Controllers
        
         
         [HttpGet("getTrainerDetails")]
-        public ActionResult Get(string email)
+        public ActionResult Get([FromHeader]string email)
         {
             
             var trainer = logic.GetTrainer(email);
@@ -54,7 +54,7 @@ namespace Services.Controllers
         }
 
         [HttpGet("signIn")]
-        public ActionResult SignIn(string email, string password)
+        public ActionResult SignIn([FromHeader]string email, [FromHeader] string password)
         {
             if (v.isEmailPresent(email) == true)
             {
@@ -64,7 +64,7 @@ namespace Services.Controllers
                 }
                 else
                 {
-                    return BadRequest("Wrong passowrd");
+                    return BadRequest("Wrong password");
                 }
             }
             else

@@ -21,13 +21,13 @@ namespace Services.Controllers
             return Ok(experiences);
         }
 
-        [HttpPut("InsertExperience")]
-        public ActionResult Put(string email, Experience s)
+        [HttpPost("InsertExperience")]
+        public ActionResult Post(string email, Experience s)
         {
             return Ok(exlogic.addExperience(email, s));
         }
-        [HttpPost("UpdateExperience")]
-        public ActionResult Post([FromHeader] string email, [FromHeader] string companyName, [FromBody] Experience ex)
+        [HttpPut("UpdateExperience")]
+        public ActionResult Put([FromHeader] string email, [FromHeader] string companyName, [FromBody] Experience ex)
         {
             return Ok(exlogic.updateExperience(email, companyName, ex));
         }

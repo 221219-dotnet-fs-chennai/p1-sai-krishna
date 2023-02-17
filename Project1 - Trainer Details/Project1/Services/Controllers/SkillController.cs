@@ -22,13 +22,13 @@ namespace Services.Controllers
             return Ok(skills);
         }
 
-        [HttpPut("InsertSkill")] 
-        public ActionResult Put(string email, Skill s)
+        [HttpPost("InsertSkill")] 
+        public ActionResult Post(string email, Skill s)
         {
             return Ok(slogic.addSkill(email,s));
         }
-        [HttpPost("UpdateSkill")]
-        public ActionResult Post([FromHeader]string email,[FromHeader]string skillName,[FromBody] Skill skill)
+        [HttpPut("UpdateSkill")]
+        public ActionResult Put([FromHeader]string email,[FromHeader]string skillName,[FromBody] Skill skill)
         {
             return Ok(slogic.updateSkill(email, skillName, skill));
         }

@@ -22,13 +22,13 @@ namespace Services.Controllers
             return Ok(skills);
         }
 
-        [HttpPut("InsertEducation")]
-        public ActionResult Put(string email, Education s)
+        [HttpPost("InsertEducation")]
+        public ActionResult Post(string email, Education s)
         {
             return Ok(elogic.addEducation(email, s));
         }
-        [HttpPost("UpdateEducation")]
-        public ActionResult Post([FromHeader] string email, [FromHeader] string InstituteName, [FromBody] Education Education)
+        [HttpPut("UpdateEducation")]
+        public ActionResult Put([FromHeader] string email, [FromHeader] string InstituteName, [FromBody] Education Education)
         {
             return Ok(elogic.updateEducation(email, InstituteName, Education));
         }
