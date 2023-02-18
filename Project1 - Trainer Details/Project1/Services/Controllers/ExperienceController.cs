@@ -22,7 +22,7 @@ namespace Services.Controllers
         }
 
         [HttpPost("InsertExperience")]
-        public ActionResult Post(string email, Experience s)
+        public ActionResult Post([FromHeader] string email, [FromBody] Experience s)
         {
             return Ok(exlogic.addExperience(email, s));
         }

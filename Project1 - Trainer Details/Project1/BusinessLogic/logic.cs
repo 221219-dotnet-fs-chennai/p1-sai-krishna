@@ -146,6 +146,7 @@ namespace BusinessLogic
             eduToUpdate.Degree = e.Degree;
             eduToUpdate.StartDate = RegexValidation.isValidStartDate(e.StartDate) ? e.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY)");
             eduToUpdate.EndDate = RegexValidation.isValidEndDate(e.EndDate) ? e.EndDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY) or 'Present'");
+            eduToUpdate.Cgpa = e.Score;
             return Mapper.EducationMapper(efe.updateEducation(eduToUpdate));
         }
 
@@ -177,7 +178,7 @@ namespace BusinessLogic
             exToUpdate.CmpName = ex.CompanyName;
             exToUpdate.Role = ex.Role;
             exToUpdate.StartDate = RegexValidation.isValidStartDate(ex.StartDate) ? ex.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY)");
-            exToUpdate.EndDate = RegexValidation.isValidEndDate(ex.StartDate) ? ex.StartDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY) or 'Present'");
+            exToUpdate.EndDate = RegexValidation.isValidEndDate(ex.EndDate) ? ex.EndDate : throw new UserDefinedException("Please enter in correct format(MM/YYYY) or 'Present'");
 
             return Mapper.ExperienceMapper(efex.updateExperience(exToUpdate));
         }

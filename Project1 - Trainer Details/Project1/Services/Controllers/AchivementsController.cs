@@ -23,7 +23,7 @@ namespace Services.Controllers
         }
 
         [HttpPost("InsertAchivement")]
-        public ActionResult Post(string email, Achivements a)
+        public ActionResult Post([FromHeader]string email,[FromBody] Achivements a)
         {
             return Ok(alogic.addAchivement(email, a));
         }

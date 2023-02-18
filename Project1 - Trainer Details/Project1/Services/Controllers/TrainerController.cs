@@ -76,10 +76,17 @@ namespace Services.Controllers
         [HttpPut("UpdateTrainer")]
         public ActionResult Put([FromHeader] string email, [FromBody] Trainer t)
         {
-            return Ok(logic.updateTrainer(email, t));
+            try
+            {
+                return Ok(logic.updateTrainer(email, t));
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message + ", Please try again");
+            }
         }
 
-        [HttpDelete("DeleteAccount")]
+        [HttpDelete("DeleteAccount")] 
         public ActionResult Delete([FromHeader] string email)
         {
             return Ok(logic.deleteTrainer(email));

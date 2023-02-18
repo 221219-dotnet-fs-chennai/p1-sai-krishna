@@ -23,7 +23,7 @@ namespace Services.Controllers
         }
 
         [HttpPost("InsertEducation")]
-        public ActionResult Post(string email, Education s)
+        public ActionResult Post([FromHeader]string email, [FromBody] Education s)
         {
             return Ok(elogic.addEducation(email, s));
         }

@@ -23,7 +23,7 @@ namespace Services.Controllers
         }
 
         [HttpPost("InsertSkill")] 
-        public ActionResult Post(string email, Skill s)
+        public ActionResult Post([FromHeader]string email, [FromBody]Skill s)
         {
             return Ok(slogic.addSkill(email,s));
         }
