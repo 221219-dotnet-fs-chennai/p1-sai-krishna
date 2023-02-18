@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Monoton">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"></script>
+    <script src="display.js"></script>
+    <link rel="stylesheet" href="signUpStyle.css">
+    <title>Document</title>
+    <style>
+      body{
+        background-image: url("https://images.pexels.com/photos/3847486/pexels-photo-3847486.jpeg?auto=compress&cs=tinysrgb&w=1800");
+        /* background-image: url(https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1000); */
+        /* background-image: url("https://images.pexels.com/photos/7078283/pexels-photo-7078283.jpeg?auto=compress&cs=tinysrgb&w=800"); */
+
+      }
+        #dis{
+            width: 94%;
+            margin:2% 2%;
+            /* background-color: rgba(189, 183, 183, 0.996); */
+            
+
+            color: black;
+          }
+        
+        /* .open-button {
+        background-color: #555;
+        color: white;
+        padding: .5%;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        display: inline;
+ 
+} */
+#mainCard{
+  width: 65%;
+  margin:2% 2%;
+  background-color: rgba(65, 63, 63, 0.82);
+  
+  color:white;
+}
+.card-header{
+  background-color: rgba(47, 45, 45, 0.996);
+  
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 2px;
+  right: 20px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 400px;
+  padding: 5px;
+  color: #171b1a;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+
+  padding: 5px;
+  margin: 5px 0 5px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #171b1a;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:5px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Bootstrap" width="30" height="24">
+            </a>
+            <a class="navbar-brand" href="#">Trainer Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   
+                </ul>
+
+                <button class="btn btn-dark " type="submit" onclick="location.href='index.html'">Sign Out</button>
+               
+
+            </div>
+        </div>
+    </nav>
+
+    <script>
+      getPersonalDetails();
+      getSkills();
+      getEducation();
+      getExperience();
+      getAchivements();
+  </script>
+
+
+    
+
+  
+    
+    
+    <div class="card divp" id="mainCard">
+      <h3 class="card-header" id="formshow"> Personal Details</h3>
+    </div>   
+    <script>
+      function openFormDet() {
+        document.getElementById("myFormDet").style.display = "block";
+      }
+      
+      function closeFormDet() {
+        document.getElementById("myFormDet").style.display = "none";
+      }
+                 
+      </script>
+    
+  <!-- -------------------------------------------------------------Skills------------------------------------------------------------------------------ -->
+
+  <div class="form-popup" id="myForm">
+    <form action="" class="form-container" id="addSkill">
+
+      <label ><b>Skill Name</b></label>
+      <input type="text" placeholder="Enter Skill Name" name="name" required>
+
+      <label ><b>Description</b></label>
+      <input type="text" placeholder="Enter Description" name="description" required>
+
+      <button type="submit" class="btn" onclick="addSkill()">Add</button>
+      <button type="button" class="btn cancel" onclick="closeFormskill()">Close</button>
+    </form>
+  </div>  
+<script>
+    function openFormskill() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeFormskill() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    function openFormuskill() {
+      document.getElementById("myFormu").style.display = "block";
+    }
+    
+    function closeFormuskill() {
+      document.getElementById("myFormu").style.display = "none";
+    }
+    </script>
+    <div class="card divskill" id="mainCard">
+      <h3 class="card-header"> Skills
+        <button class="btn btn-light btn-sm" style="margin-left: 75%;" onclick="openFormskill()">Add Skills</button></h3>
+    </div>
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------------------ -->
+      <div class="form-popup" id="myFormEdu">
+      <form action="" class="form-container" id="addEdu">
+
+        <label ><b>Institute Name</b></label>
+        <input type="text" placeholder="Enter Institute Name" name="instituteName">
+
+        <label ><b>Degree</b></label>
+        <input type="text" placeholder="Enter Degree" name="degree">
+
+        <label ><b>Start Date</b></label>
+        <input type="text" placeholder="Enter Start Date(MM/YYYY)" name="startDate">
+
+        <label ><b>End Date</b></label>
+        <input type="text" placeholder="Enter End Date(MM/YYYY or 'Present')" name="endDate">
+
+        <label ><b>Score</b></label>
+        <input type="text" placeholder="Enter Score" name="score">
+
+
+        <button type="submit" class="btn" onclick="addEducation()">Add</button>
+        <button type="button" class="btn cancel" onclick="closeFormEdu()">Close</button>
+      </form>
+    </div>  
+  
+    <div class="card divEdu" id="mainCard">
+      <h3 class="card-header">Education
+        <button class="btn btn-light btn-sm" style="margin-left: 70%;" onclick="openFormEdu()">Add Education</button>
+      </h3>
+    </div>
+    <script>
+      function openFormEdu() {
+        document.getElementById("myFormEdu").style.display = "block";
+      }
+      
+      function closeFormEdu() {
+        document.getElementById("myFormEdu").style.display = "none";
+      }
+      function openFormEduu() {
+        document.getElementById("myFormEduu").style.display = "block";
+      }
+      
+      function closeFormEduu() {
+        document.getElementById("myFormEduu").style.display = "none";
+      }
+      </script>
+  <!-- ------------------------------------------------Experiences------------------------------------------------------------------------------------------------ -->
+  <div class="form-popup" id="myFormEx">
+    <form action="" class="form-container" id="addEx">
+
+      <label ><b>Company Name</b></label>
+      <input type="text" placeholder="Enter Company Name" name="companyName">
+
+      <label ><b>Role</b></label>
+      <input type="text" placeholder="Enter Your Role" name="role">
+
+      <label ><b>Start Date</b></label>
+      <input type="text" placeholder="Enter Start Date(MM/YYYY)" name="startDate">
+
+      <label ><b>End Date</b></label>
+      <input type="text" placeholder="Enter End Date(MM/YYYY or 'Present')" name="endDate">
+
+      <button type="submit" class="btn" onclick="addExperience()">Add</button>
+      <button type="button" class="btn cancel" onclick="closeFormEx()">Close</button>
+    </form>
+  </div>  
+
+    </div>
+    <div class="card divEx" id="mainCard">
+      <h3 class="card-header">Experiences
+        <button class="btn btn-light btn-sm" style="margin-left: 65%;" onclick="openFormEx()">Add Experience</button>
+      </h3></div>
+
+      <script>
+        function openFormEx() {
+          document.getElementById("myFormEx").style.display = "block";
+        }
+        
+        function closeFormEx() {
+          document.getElementById("myFormEx").style.display = "none";
+        }
+        function openFormExu() {
+          document.getElementById("myFormExu").style.display = "block";
+        }
+        
+        function closeFormExu() {
+          document.getElementById("myFormExu").style.display = "none";
+        }
+        </script>
+      
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------------------ --> 
+  <div class="form-popup" id="myFormAch">
+    <form action="" class="form-container" id="addAch">
+
+      <label ><b>Title</b></label>
+      <input type="text" placeholder="Enter Title" name="title" required>
+
+      <label ><b>Description</b></label>
+      <input type="text" placeholder="Enter Description" name="description" required>
+
+      <button type="submit" class="btn" onclick="addAchivement()">Add</button>
+      <button type="button" class="btn cancel" onclick="closeFormAch()">Close</button>
+    </form>
+  </div>  
+<script>
+    function openFormAch() {
+      document.getElementById("myFormAch").style.display = "block";
+    }
+    
+    function closeFormAch() {
+      document.getElementById("myFormAch").style.display = "none";
+    }
+    function openFormAchu() {
+      document.getElementById("myFormAchu").style.display = "block";
+    }
+    
+    function closeFormAchu() {
+      document.getElementById("myFormAchu").style.display = "none";
+    }
+    </script>
+    <div class="card divAch" id="mainCard">
+      <h3 class="card-header"> Achivements/Certificates
+        <button class="btn btn-light btn-sm" style="margin-left: 35%;" onclick="openFormAch()">Add Achivements/Certificates</button></h3>
+    </div>  
+  
+
+    <div class="footer-dark">
+      <footer>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4 item text">
+                      <h3>Have a question?</h3>
+                      <ul>
+                          <li><a href="#">support@trainerfinder.com</a></li>
+                          <li><a href="#">1800-560-120</a></li>
+                          <li><a href="#">#23, 10th Avenue, Siruseri, Chennai-603103</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-5 col-md-4 item">
+                      <ul>
+                          <li><a href="#">Terms</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="#">Cookie Settings</a></li>
+                          <li><a href="#">Prefrences</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-5 col-md-4 item">
+                      <ul>
+                          <li><a href="#">Company</a></li>
+                          <li><a href="#">Team</a></li>
+                          <li><a href="#">Careers</a></li>
+                          <li><a href="#">Subscribe to our Newsletter</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                              class="icon ion-social-twitter"></i></a><a href="#"><i
+                              class="icon ion-social-snapchat"></i></a><a href="#"><i
+                              class="icon ion-social-instagram"></i></a></div>
+              </div>
+              <p class="copyright">Company Name © 2018</p>
+          </div>
+      </footer>
+  </div>
+</body>
+</html>
