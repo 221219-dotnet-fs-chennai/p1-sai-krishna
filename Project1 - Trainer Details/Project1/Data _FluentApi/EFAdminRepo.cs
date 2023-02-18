@@ -35,33 +35,16 @@ namespace Data__FluentApi
         {
             return context.Trainers.Where(t => t.Pincode == pincode).ToList();
         }
-        public Dictionary<string, string[]> GetTrainersBySkill(string g)
+        public List<Trainer> GetTrainersBySkill(string g)
         {
-            Dictionary<string, string[]> ski=new Dictionary<string, string[]>();
+           
             var skil = (from t in context.Trainers
                           join s in context.Skills
                           on t.TrainerId equals s.TrainerId
                           where s.SkillName == g
-                          select new
-                          {
-                              t.Name,
-                              t.Gender,
-                              t.Email,
-                              s.SkillName
-
-                          }).ToList();
-            foreach(var si in skil)
-            {
-                if (ski.ContainsKey(si.SkillName))
-                {
-                    ski[si.SkillName] = new string[] { si.Name, si.Gender,si.Email,si.SkillName};
-                }
-                else
-                {
-                    ski.Add(si.SkillName, new string[] { si.Name, si.Gender , si.Email, si.SkillName });
-                }
-            }
-            return ski;
+                          select t).ToList();
+           
+            return skil;
         }
         public Dictionary<string, List<List<string>>> GetAllTrainersBySkill()
         {

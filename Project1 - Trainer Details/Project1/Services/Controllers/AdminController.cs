@@ -27,17 +27,18 @@ namespace Services.Controllers
         [HttpGet("GetTrainersByCity")]
         public IActionResult GetByCity(string city)
         {
-            return Ok(adLogic.GetTrainersByCity(city));
+             return (adLogic.GetTrainersByCity(city))[1]!=null?Ok(adLogic.GetTrainersByCity(city)):BadRequest( " Please try again");
         }
         [HttpGet("GetTrainersByPincode")]
         public IActionResult GetByPincode(string pincode)
         {
-            return Ok(adLogic.GetTrainersByPincode(pincode));
+            return (adLogic.GetTrainersByPincode(pincode))[1] != null ? Ok(adLogic.GetTrainersByPincode(pincode)) : BadRequest(" Please try again");
+           
         }
         [HttpGet("GetTrainersBySkill")]
         public IActionResult GetBySkill(string skill)
         {
-            return Ok(adLogic.GetTrainersBySkill(skill).Values);
+            return Ok(adLogic.GetTrainersBySkill(skill));
         }
         [HttpGet("GetAllTrainersBySkill")]
         public IActionResult GetAllBySkill()

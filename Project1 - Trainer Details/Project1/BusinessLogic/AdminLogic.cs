@@ -37,9 +37,9 @@ namespace BusinessLogic
             return Mapper.TrainerMapper(adRepo.GetTrainersByPincode(pin));
         }
 
-        public Dictionary<string, string[]> GetTrainersBySkill(string skill)
+        public List<Models.Trainer> GetTrainersBySkill(string skill)
         {
-            return (adRepo.GetTrainersBySkill(skill));
+            return Mapper.TrainerMapper(adRepo.GetTrainersBySkill(skill));
         }
         public Dictionary<string, List<List<string>>> GetAllTrainersBySkill()
         {

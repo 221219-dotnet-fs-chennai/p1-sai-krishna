@@ -14,7 +14,7 @@ namespace BusinessLogic
         public List<Models.Trainer> GetTrainersByGender(string g);
         public List<Models.Trainer> GetTrainersByCity(string g);
         public List<Models.Trainer> GetTrainersByPincode(string g);
-        public Dictionary<string, string[]> GetTrainersBySkill(string g);
+        public List<Models.Trainer> GetTrainersBySkill(string g);
         public Dictionary<string, List<List<string>>> GetAllTrainersBySkill();
 
 

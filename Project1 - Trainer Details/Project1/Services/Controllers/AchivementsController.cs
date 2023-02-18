@@ -28,9 +28,9 @@ namespace Services.Controllers
             return Ok(alogic.addAchivement(email, a));
         }
         [HttpPut("UpdateAchivement")]
-        public ActionResult Put([FromHeader] string email, [FromHeader] string achivementName, [FromBody] Achivements skill)
+        public ActionResult Put([FromHeader] string email, [FromHeader] string achivementName, [FromBody] Achivements ach)
         {
-            return Ok(alogic.updateAchivement(email, achivementName, skill));
+            return Ok(alogic.updateAchivement(email, achivementName, ach));
         }
         [HttpDelete("DeleteAchivement")]
         public ActionResult Delete([FromHeader] string email, [FromHeader] string achivementName)
