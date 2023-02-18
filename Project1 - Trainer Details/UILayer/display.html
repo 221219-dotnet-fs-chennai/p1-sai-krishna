@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
-   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
-    <script href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"></script>
-    <link rel="stylesheet" href="signUpStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="display.js"></script>
-    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+<script href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"></script>
+<link rel="stylesheet" href="signUpStyle.css"> 
+    <title>Display</title>
     <style>
-         .card{
-        box-shadow: 10px 10px 20px rgb(188, 116, 225);
-        color: rgb(113, 1, 150);
-      }
-      #signInForm{
-        text-align: left;
-        font-size: 1.2em;
-      }
-      #signInForm input{
-        color: rgb(3, 1, 150);
-       
-      }
-      #signInForm button{
-        margin-left: 40%;
-      }
+      #dis{
+            width: 94%;
+            margin:2% 2%;
+             color: black;
+          }
+     #mainCard{
+        width: 60%;
+        margin:2% 15%;
+        background-color: rgba(65, 63, 63, 0.82);
+        
+        color:white;
+        }
+        .card-header{
+        background-color: rgba(47, 45, 45, 0.601);
+        
+        }
+        #mainCard button{
+            float: right;
+        }
+        #mainCard select{
+            margin-left: 38%;
+        }
+        #mainCard input{
+            width: 15%;
+            margin-left:40%;
+        }
     </style>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -63,44 +68,46 @@
             </div>
         </div>
     </nav>
-
-    <div class="formdata">
-    <div class="card text-center mb-3" style="width: 30rem;margin-left: 7em;">
-        <div class="card-body">
-          <h2 class="card-title">Sign In</h2>
-          <form class="row g-3 " id="signInForm">
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" name="emailsi" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" name="passwordsi"placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
-              <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                     Remember me
-                    </label>
-                  </div>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-dark btn-lg" onclick=" signIn()">Sign in</button>
-            </div>
-           
-          </form>
-
-          
-        </div>
-      </div>
-    </div>
+    
+    <div class="card divp" id="mainCard">
+        <h4 class="card-header" id="formshow">Get All Trainers
+            <button class="btn btn-light "type="submit" onclick="displayAllTrainers()">Search</button></h4>
+      </div> 
 
 
 
+      <div class="card divGender" id="mainCard">
+        <h4 class="card-header" id="formshow">Get All Trainers By Gender:
+        <select name="gender" class="gender">
+            <option selected value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+          <button class="btn btn-light "type="submit" onclick="displayByGender()">Search</button>
+        </h4>
+      </div> 
 
+      <div class="card divCity" id="mainCard">
+        <h4 class="card-header" id="formshow">Get All Trainers By City:
+            <input type="text" id="inputCity"class="md-2" name="city">
+          <button class="btn btn-light "type="submit" onclick="displayByCity()">Search</button>
+        </h4>
+      </div> 
 
-    <div class="footer-dark">
+      <div class="card divPincode" id="mainCard">
+        <h4 class="card-header" id="formshow">Get Trainers By Pincode:
+            <input type="text" id="inputPincode"class="md-2" name="pincode">
+          <button class="btn btn-light "type="submit" onclick="displayByPincode()">Search</button>
+        </h4>
+      </div> 
+
+      <div class="card divSkill" id="mainCard">
+        <h4 class="card-header" id="formshow">Get All Trainers By Skill:
+            <input type="text" id="inputSkill"class="md-2" name="skill">
+          <button class="btn btn-light "type="submit" onclick="displayBySkill()">Search</button>
+        </h4>
+      </div> 
+
+      <div class="footer-dark">
         <footer>
             <div class="container">
                 <div class="row">
@@ -134,10 +141,10 @@
                                 class="icon ion-social-snapchat"></i></a><a href="#"><i
                                 class="icon ion-social-instagram"></i></a></div>
                 </div>
-                <p class="copyright">Trainer Finder.Pvt.Ltd CopyRight 2023 © By Sai Krishna </p>
+                <p class="copyright">Trainer Finder.Pvt.Ltd CopyRight 2023 © By Sai Krishna</p>
             </div>
         </footer>
     </div>
+    
 </body>
-
 </html>

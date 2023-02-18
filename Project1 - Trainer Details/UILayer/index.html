@@ -24,7 +24,7 @@
 <body>
 
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="images/logo.png" alt="Bootstrap" width="30" height="24">
@@ -39,6 +39,9 @@
           <li class="nav-item">
             <button class="btn btn-dark " type="submit" onclick="location.href='index.html'">Home</button>
           </li>
+          <li class="nav-item">
+            <button class="btn btn-dark " type="submit" onclick="location.href='display.html'">Find Trainers</button>
+          </li>
         </ul>
         
           <button class="btn btn-dark " type="submit" onclick="location.href='signUp.html'">Sign Up</button>
@@ -48,8 +51,8 @@
     </div>
   </nav>
 
-
-
+  <button type="button" id="SignUpNow" onclick="location.href='signUp.html'" class="btn btn-danger btn-lg jello-horizontal">Register Now</button>
+  
 
   <div class="caro">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
@@ -62,9 +65,9 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="https://wallpapers.com/images/high/chalkboard-with-wooden-varnish-frame-a3ceu3rjvxdw3e7g.webp"
-            class="d-block w-100" alt="...">
+            class="d-block w-100 " alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h1>Welcome Trainer's</h1>
+            <h1 >Welcome Trainer's</h1>
             <p>This is a platform that allows personal trainers to create an online presence and showcase their skills,
               qualifications, and services to potential clients.
               This type of website serves as a directory of trainers, allowing individuals to search for and find
@@ -106,13 +109,14 @@
 
 
 
-
+  <div class="card" id ="cback">
+   
   <div class="features">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
-        <div class="card h-100">
-          <img src="images/fe1.png" class="card-img-top" alt="...">
-          <div class="card-body">
+        <div class="card h-100 ">
+          <img src="images/fe1.png" class="card-img-top wobble-hor-bottom" alt="...">
+          <div class="card-body ">
             <h5 class="card-title">50,000+ Trainers</h5>
             <p class="card-text">We have thousands of registered certified trainers from accross different domains for
               the client to choose.</p>
@@ -120,8 +124,8 @@
         </div>
       </div>
       <div class="col">
-        <div class="card h-100">
-          <img src="images/fe2.jpg" class="card-img-top" alt="...">
+        <div class="card h-100 ">
+          <img src="images/fe2.jpg" class="card-img-top wobble-hor-bottom" alt="...">
           <div class="card-body">
             <h5 class="card-title">Connected over 1 Lakh users to Trainers</h5>
             <p class="card-text">More than 1 lakh Clients have registered and are still using the services provides by
@@ -130,8 +134,8 @@
         </div>
       </div>
       <div class="col">
-        <div class="card  h-100">
-          <img src="images/fe3.jpg" class="card-img-top" alt="...">
+        <div class="card  h-100 ">
+          <img src="images/fe3.jpg" class="card-img-top wobble-hor-bottom"  alt="...">
           <div class="card-body">
             <h5 class="card-title">80,000+ Positive reviews</h5>
             <p class="card-text">All of our trainers provide quaity service and today we are one of the top rated
@@ -141,8 +145,12 @@
       </div>
     </div>
   </div>
+  </div>
 
-
+<br><br>
+  <div class="card" id ="cback">
+    <div><h1>&emsp; &emsp;&emsp; &emsp;&emsp; &emsp; Some of our top categories of Trainers are</h1></div>
+ 
   <div class="cats">
     <div id="carouselExample" class="carousel slide">
       <div class="carousel-inner">
@@ -151,25 +159,25 @@
             <div class="card mx-2">
               <img src="https://www.urbanpro.com/assets/topicId-599.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Class 1-10 Tutors</h5>
               </div>
             </div>
             <div class="card mx-2">
               <img src="https://www.urbanpro.com/assets/topicId-1622.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Gym Trainers</h5>
               </div>
             </div>
             <div class="card mx-2">
               <img src="https://www.urbanpro.com/assets/topicId-603.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Technical Trainer</h5>
               </div>
             </div>
             <div class="card mx-2">
               <img src="https://www.urbanpro.com/assets/topicId-55.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Photography Trainer</h5>
               </div>
             </div>
           </div>
@@ -179,7 +187,7 @@
             <div class="card mx-2">
               <img src="https://www.urbanpro.com/assets/topicId-2258.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Competative Exams Training</h5>
               </div>
             </div>
             <div class="card mx-2">
@@ -187,7 +195,7 @@
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ63ZDheXEKKjvc_bV0t_TJRXxplDXOGnJC7w&usqp=CAU"
                 class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Swimming Coaches</h5>
               </div>
             </div>
             <div class="card mx-2">
@@ -195,7 +203,7 @@
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8z2AXvSsJSY6_VOMsJmIzREOAgDjiqUI9IQ&usqp=CAU"
                 class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Cricket Coaches</h5>
               </div>
             </div>
             <div class="card mx-2">
@@ -203,7 +211,7 @@
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6DjD4Mh-_1cUf-BX3-fJM8AkrguBV9OOvxkeGkjFbLp_Fe1bESI3YRFxs3dBo7HZ8Cog&usqp=CAU"
                 class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Website and App Development</h5>
               </div>
             </div>
           </div>
@@ -213,19 +221,19 @@
             <div class="card mx-2">
               <img src="images/football.jfif" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Football Coaches</h5>
               </div>
             </div>
             <div class="card mx-2">
               <img src="https://www.urbanpro.com/assets/topicId-69.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">German Tutors</h5>
               </div>
             </div>
             <div class="card mx-2">
               <img src="https://www.urbanpro.com/assets/topicId-67.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Spoken English Tutors</h5>
               </div>
             </div>
             <div class="card mx-2">
@@ -233,7 +241,7 @@
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJgr_zLaECCUl4ThjMqSJQabFgpclA_8oxhA&usqp=CAU"
                 class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Yoga Trainer</h5>
               </div>
             </div>
           </div>
@@ -250,6 +258,11 @@
 
     </div>
   </div>
+</div>
+
+
+
+
   <div class="footer-dark">
   <footer>
     <div class="container">
@@ -281,10 +294,11 @@
           
           <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
       </div>
-      <p class="copyright">Company Name © 2018</p>
+      <p class="copyright">Trainer Finder.Pvt.Ltd CopyRight 2023 © By Sai Krishna</p>
   </div>
   </footer>
 </div>
+  
   
 
   

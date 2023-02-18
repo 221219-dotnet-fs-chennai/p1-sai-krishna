@@ -1,8 +1,8 @@
 
 body{
   /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR7NocwDhgTpsGsiKaNkTtxV_63WUIWcEQYQ&usqp=CAU"); */
-background-image: linear-gradient( rgb(221, 209, 154), rgb(154, 192, 194)); 
-
+  /* background-image: linear-gradient( to right,#F0F2F0, #000C40);  */
+  background-image: linear-gradient( to right,#c3376364, #1d26797b); 
 }
 .formdata{
     margin: 4em 4em;

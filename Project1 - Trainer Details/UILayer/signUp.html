@@ -9,7 +9,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Monoton">
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
@@ -20,13 +20,30 @@
     <link rel="stylesheet" href="signUpStyle.css">
     <script src="display.js"></script>
     <title>Sign Up</title>
+    <style>
+      .card{
+        box-shadow: 10px 10px 20px rgb(188, 116, 225);
+        color: rgb(113, 1, 150);
+      }
+      #signUpForm{
+        text-align: left;
+        font-size: 1.5em;
+      }
+      #signUpForm input{
+        color: rgb(113, 1, 150);
+       
+      }
+      #signUpForm button{
+        margin-left: 45%;
+      }
+    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Bootstrap" width="30" height="24">
+                <img src="images/logo.png" alt="Bootstrap" width="30" height="24">
             </a>
             <a class="navbar-brand" href="#">Trainer Finder</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -49,9 +66,9 @@
     </nav>
 
     <div class="formdata">
-    <div class="card text-center mb-3" style="width: 40rem;">
+    <div class="card text-center mb-3" style="width: 50rem;">
         <div class="card-body">
-          <h5 class="card-title">Sign Up as Trainer</h5>
+          <h2 class="card-title">Sign Up as Trainer</h2>
           <form class="row g-3" id="signUpForm">
             <div class="col-md-6">
                 <label for="inputName4" class="form-label">Name</label>
@@ -103,7 +120,7 @@
               <input type="text" class="form-control" id="AboutMe" name="aboutMe">
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-dark" onclick=" return signUp()">Sign Up</button>
+              <button type="submit" class="btn btn-dark btn-lg" onclick=" return signUp()">Sign Up</button>
             </div>
           </form>
           
@@ -149,7 +166,7 @@
                                 class="icon ion-social-snapchat"></i></a><a href="#"><i
                                 class="icon ion-social-instagram"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2018</p>
+                <p class="copyright">Trainer Finder.Pvt.Ltd CopyRight 2023 © By Sai Krishna</p>
             </div>
         </footer>
     </div>
