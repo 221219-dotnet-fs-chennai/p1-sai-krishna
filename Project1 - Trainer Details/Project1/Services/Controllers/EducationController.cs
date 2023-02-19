@@ -18,6 +18,7 @@ namespace Services.Controllers
         [HttpGet("DisplayEducations")]
         public ActionResult Get([FromHeader] string email)
         {
+            Log.Information("Fetching trainer Educations");
             var skills = elogic.GetEducation(email);
             return Ok(skills);
         }
@@ -25,16 +26,33 @@ namespace Services.Controllers
         [HttpPost("InsertEducation")]
         public ActionResult Post([FromHeader]string email, [FromBody] Education s)
         {
-            return Ok(elogic.addEducation(email, s));
+            try
+            {
+                Log.Information("Inserting trainer Educations");
+                return Ok(elogic.addEducation(email, s));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message + ", Please try again");
+            }
         }
         [HttpPut("UpdateEducation")]
         public ActionResult Put([FromHeader] string email, [FromHeader] string InstituteName, [FromBody] Education Education)
         {
-            return Ok(elogic.updateEducation(email, InstituteName, Education));
+            try
+            {
+                Log.Information("Updating trainer Educations");
+                return Ok(elogic.updateEducation(email, InstituteName, Education));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message + ", Please try again");
+            }
         }
         [HttpDelete("DeleteEducation")]
         public ActionResult Delete([FromHeader] string email, [FromHeader] string InstituteName)
         {
+            Log.Information("Deleting trainer Educations");
             return Ok(elogic.deleteEducation(email, InstituteName));
         }
     }

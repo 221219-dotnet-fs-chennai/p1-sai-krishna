@@ -25,6 +25,7 @@ namespace Services.Controllers
             var trainer = logic.GetTrainer(email);
             if (trainer != null)
             {
+                Log.Information("Fetching trainer details");
                 return Ok(trainer);
             }
             else
@@ -40,6 +41,7 @@ namespace Services.Controllers
             {
                 if (v.isEmailPresent(t.Email) == false)
                 {
+                    Log.Information(" New trainer Sign up");
                     return Ok(logic.addTrainer(t));
                 }
                 else
@@ -60,6 +62,7 @@ namespace Services.Controllers
             {
                 if (v.signIn(email, password))
                 {
+                    Log.Information(" trainer login");
                     return Ok("Successful login");
                 }
                 else
@@ -69,6 +72,7 @@ namespace Services.Controllers
             }
             else
             {
+                Log.Information(" logged in with non existing email");
                 return BadRequest("Email does not exists,please sign up");
             }
         }
@@ -78,6 +82,7 @@ namespace Services.Controllers
         {
             try
             {
+                Log.Information("Updating trainer details");
                 return Ok(logic.updateTrainer(email, t));
             }
             catch(Exception ex)
@@ -89,6 +94,7 @@ namespace Services.Controllers
         [HttpDelete("DeleteAccount")] 
         public ActionResult Delete([FromHeader] string email)
         {
+            Log.Information("Account Deleted");
             return Ok(logic.deleteTrainer(email));
         }
     }

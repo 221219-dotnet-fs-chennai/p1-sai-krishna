@@ -9,7 +9,7 @@ namespace Models
 {
     public class Experience 
     {
-        string sdate,edate;
+        
         public int? Id { get; set; }
         public string? CompanyName { get; set; }
         public string? Role { get; set; }

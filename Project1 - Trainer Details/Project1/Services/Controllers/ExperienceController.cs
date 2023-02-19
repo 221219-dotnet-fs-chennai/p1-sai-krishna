@@ -17,6 +17,7 @@ namespace Services.Controllers
         [HttpGet("DisplayExperience")]
         public ActionResult Get([FromHeader] string email)
         {
+            Log.Information("Fetching trainer Experiences");
             var experiences = exlogic.GetExperience(email);
             return Ok(experiences);
         }
@@ -24,16 +25,34 @@ namespace Services.Controllers
         [HttpPost("InsertExperience")]
         public ActionResult Post([FromHeader] string email, [FromBody] Experience s)
         {
-            return Ok(exlogic.addExperience(email, s));
+
+            try
+            {
+                Log.Information("Inserting trainer Experiences");
+                return Ok(exlogic.addExperience(email, s));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message + ", Please try again");
+            }
         }
         [HttpPut("UpdateExperience")]
         public ActionResult Put([FromHeader] string email, [FromHeader] string companyName, [FromBody] Experience ex)
         {
-            return Ok(exlogic.updateExperience(email, companyName, ex));
+            try
+            {
+                Log.Information("Updating trainer Experiences");
+                return Ok(exlogic.updateExperience(email, companyName, ex));
+            }
+            catch (Exception exe)
+            {
+                return BadRequest(exe.Message + ", Please try again");
+            }
         }
         [HttpDelete("DeleteExperience")]
         public ActionResult Delete([FromHeader] string email, [FromHeader] string companyName)
         {
+            Log.Information("Deleting trainer Experiences");
             return Ok(exlogic.deleteExperience(email, companyName));
         }
     }

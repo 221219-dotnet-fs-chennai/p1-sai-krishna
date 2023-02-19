@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
     );
 // Add services to the container.
 Log.Logger = new LoggerConfiguration()
-            .WriteTo.File(@"..\Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+            .WriteTo.File(@"Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
             .CreateLogger();
 Log.Information("Program Starts");
 builder.Services.AddControllers();

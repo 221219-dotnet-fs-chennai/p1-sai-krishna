@@ -5,13 +5,13 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{0D3E6D6F-67D7-4282-A262-64FD8D5DD7CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data _FluentApi", "Data _FluentApi\Data _FluentApi.csproj", "{035EA101-22A8-42B7-B14B-E1CA167A2650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data _EntityFramework", "Data _FluentApi\Data _EntityFramework.csproj", "{035EA101-22A8-42B7-B14B-E1CA167A2650}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{C8D977DA-0EB9-4C69-9047-D45885FC6D14}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{ED2E34F5-FA71-4427-B0B6-999FB8E386B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{0330CEDD-D8DB-4B71-972C-877636ACF9EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing.csproj", "{0330CEDD-D8DB-4B71-972C-877636ACF9EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
