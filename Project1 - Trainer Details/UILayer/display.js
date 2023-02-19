@@ -258,7 +258,6 @@ function displayBySkill()
         });
     }
 //-------------------------------------------------------Personel Details----------------------------------------------------------------------------------------------
-
     function getPersonalDetails()
     {
         var email = localStorage.getItem("myEmail");
