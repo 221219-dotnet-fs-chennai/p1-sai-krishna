@@ -1,4 +1,4 @@
-# <u>Project_0 - Sai Krishna C</u>
+# <u>Project_1 - Sai Krishna C</u>
 ## <u>This project name is Find a Trainer Online.</u>
 - Agenda is to create an application to add professional trainers details in a database and these trainers are able to upload their profiles, so that recruiters and clients can reach out to them to offer business as well get their team trained on required skill sets.
 ### <u>This is the first phase of this Project, in this</u> 
