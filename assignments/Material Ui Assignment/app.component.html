@@ -1,0 +1,89 @@
+<!-- <h2 *ngIf="status  else elsepart">{{title}}</h2> -->
+<!-- <ng-template #elsepart><h2>Unable to fetch</h2></ng-template> -->
+
+
+<!-- <ng-template [ngIf]="color=='Red'">
+    <h2 style="color: red;">Red</h2>
+</ng-template>
+
+<ng-template [ngIf]="color=='Yellow'">
+    <h2 style="color: yellow;">Yellow</h2>
+</ng-template>
+
+<ng-template [ngIf]="color=='Blue'">
+    <h2 style="color: blue;">blue</h2>
+</ng-template>
+
+<ng-template [ngIf]="color=='Green'">
+    <h2 style="color: green;">Green</h2>
+</ng-template> -->
+
+
+<!-- <div [ngSwitch]='color'>
+    <h2 *ngSwitchCase="'Red'" style="color: red;">Red</h2>
+    <h2 *ngSwitchCase="'Blue'" style="color: rgb(12, 27, 245);">Blue</h2>
+    <h2 *ngSwitchCase="'Green'" style="color: rgb(15, 247, 54);">Green</h2>
+    <h2 *ngSwitchDefault>Default</h2>
+</div> -->
+
+<!-- <ul>
+    <li *ngFor="let letters of userarray">{{letters}}</li>
+</ul>
+
+<ul>
+    <li  *ngFor="let ass of userList">Name:{{ass.name}} Salary:{{ass.salary}} Location{{ass.loc}}</li>
+</ul> -->
+
+<!-- <ul>
+    <li *ngFor="list of assoiates">{{userList}}</li>
+</ul> -->
+<p>
+	<ngb-alert [dismissible]="false">
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+</p>
+
+
+<mat-slide-toggle ><h1 style="color: black;">Slide me!</h1></mat-slide-toggle>
+
+<mat-spinner></mat-spinner>
+
+
+<!-- <form #basicform='ngForm' (submit)="getData(basicform.value)">
+    <input ngModel type="text" name="username" placeholder="Enter username">
+    <input ngModel type="text" name="email" placeholder="Enter email">
+    <input ngModel type="text" name="phone" placeholder="Enter phone">
+    <button type="submit">Submit</button>
+</form>
+<ngb-alert [dismissible]="false">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</ngb-alert>
+
+<div>
+	<ul>
+	<li>
+		{{dataObject.username}}
+	</li>
+	<li>
+		{{dataObject.email}}
+	</li>
+	<li>
+		{{dataObject.phone}}
+	</li>
+	</ul>
+</div> -->
+
+
+
+<button mat-button color="primary">Primary</button>
+
+<mat-chip-listbox aria-label="Fish selection">
+    <mat-chip-option>One fish</mat-chip-option>
+    <mat-chip-option>Two fish</mat-chip-option>
+    <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+    <mat-chip-option color="warn">Warn fish</mat-chip-option>
+  </mat-chip-listbox>
+  
+  
+  
+  
