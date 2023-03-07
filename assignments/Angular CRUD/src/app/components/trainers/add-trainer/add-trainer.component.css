@@ -1,0 +1,15 @@
+.card{
+    box-shadow: 10px 10px 20px rgb(188, 116, 225);
+    color: rgb(113, 1, 150);
+  }
+  #signUpForm{
+    text-align: left;
+    font-size: 1.5em;
+  }
+  #signUpForm input{
+    color: rgb(113, 1, 150);
+   
+  }
+  #signUpForm button{
+    margin-left: 45%;
+  }

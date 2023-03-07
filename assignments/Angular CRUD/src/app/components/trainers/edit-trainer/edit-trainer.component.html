@@ -1,0 +1,67 @@
+
+
+<div class="container my-5">
+    <h1 class="mb-3">Edit new trainer</h1>
+    <div class="formdata">
+        <div class="card text-center mb-3" style="width: 50rem;">
+            <div class="card-body">
+              <h2 class="card-title">Sign Up as Trainer</h2>
+              <form class="row g-3" id="signUpForm" #form="ngForm" (ngSubmit)="updateTrainer()" >
+                <div class="col-md-6">
+                    <label for="inputName4" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="inputName4" name="name" [(ngModel)]="trainerDetails.name">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="inputPhoneNumber4" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="inputPhoneNumber4" name="phoneNo" [(ngModel)]="trainerDetails.phoneNo">
+                  </div>
+                  <div class="col-md-2">
+                    <label for="inputGender4" class="form-label">Gender</label>
+                  <select id="inputGender4" class="form-select" name="gender" [(ngModel)]="trainerDetails.gender">
+                    
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                  </select>
+                  </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" name="email" [(ngModel)]="trainerDetails.email">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputPassword4" name="password" [(ngModel)]="trainerDetails.password">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity" name="city" [(ngModel)]="trainerDetails.city">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select" name="state" [(ngModel)]="trainerDetails.state">
+                    <option selected>Choose...</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerla">Kerla</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="inputZip" name="pincode" [(ngModel)]="trainerDetails.pincode">
+                </div>
+                <div class="col-md-12">
+                  <label for="inputAboutme" class="form-label">Something About You</label>
+                  <input type="text" class="form-control" id="AboutMe" name="aboutMe" [(ngModel)]="trainerDetails.aboutMe">
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-dark btn-lg" >Save</button>
+                </div>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+</div>

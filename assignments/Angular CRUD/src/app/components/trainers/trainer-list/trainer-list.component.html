@@ -1,0 +1,38 @@
+
+<div class="container my-5"> 
+    <h1 class="mb-3">Trainers</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>phone</th>
+            <th>gender</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Pincode</th>
+            <th>About Me</th>
+            <th>  </th>
+            <th>  </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of trainers">
+            <td >{{t.id}}</td>
+            <td >{{t.name}}</td>
+            <td >{{t.email}}</td>
+            <td >{{t.password}}</td>
+            <td >{{t.phoneNo}}</td>
+            <td >{{t.gender}}</td>
+            <td >{{t.city}}</td>
+            <td >{{t.state}}</td>
+            <td >{{t.pincode}}</td>
+            <td >{{t.aboutMe}}</td>
+            <td ><a  [routerLink]="['/trainers','edit',t.email]">Update</a></td>
+            <td ><a  [routerLink]="['/trainers','delete',t.email]">Delete</a></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
