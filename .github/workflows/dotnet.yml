@@ -23,7 +23,7 @@ jobs:
     - name: Restore dependencies
       run:  |
         cd Project1 - Trainer Details/Project1
-          dotnet restore
+        dotnet restore
     - name: Build
       run: dotnet build --no-restore Project1 - Trainer Details/Project1
     - name: Test
