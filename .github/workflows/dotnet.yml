@@ -21,8 +21,10 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run:  dotnet restore
+      run:  |
+        cd Project1 - Trainer Details/Project1
+          dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore Project1 - Trainer Details/Project1
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal Project1 - Trainer Details/Project1
